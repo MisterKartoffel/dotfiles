@@ -13,13 +13,8 @@ autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 
-autoload -Uz vcs_info
-precmd() { vcs_info }
-
-zstyle ':vcs_info:git:*' formats '%b '
-
-setopt PROMPT_SUBST
-PROMPT='%F{blue}%~%f %F{red}${vcs_info_msg_0_}%f➤  '
+# Oh-My-Posh startup
+eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/config.toml)"
 
 bindkey "^[[3~" delete-char
 bindkey "^[[3;5~" backward-kill-word
