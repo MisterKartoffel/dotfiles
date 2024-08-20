@@ -29,7 +29,6 @@
         "gpu",
         "disk",
         "memory",
-        "display",
         {
             "type": "custom", // SoftwareStart
             "format": "├{$1} {#1}Software Information{#} {$1}┤"
