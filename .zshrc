@@ -31,7 +31,6 @@ bindkey "^[[H" beginning-of-line
 bindkey "^[[F" end-of-line
 
 alias vim="nvim"
-alias c="clear"
 alias fetch="fastfetch --gpu-hide-type integrated"
 alias config="/usr/bin/git --git-dir=$HOME/Dotfiles/ --work-tree=$HOME"
 
