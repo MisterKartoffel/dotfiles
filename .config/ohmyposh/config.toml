@@ -66,7 +66,7 @@ newline = true
 
 [transient_prompt]
 background = "transparent"
-template = " ❱"
+template = " ❱ "
 foreground_templates = [
     "{{if gt .Code 0}}p:red{{end}}",
     "{{if eq .Code 0}}p:closer{{end}}",
@@ -75,7 +75,7 @@ foreground_templates = [
 [secondary_prompt]
 foreground = "p:closer"
 background = "transparent"
-template = " ❱❱"
+template = " ❱❱ "
 
 [palette]
 os = "#ACB0BE"
