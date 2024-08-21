@@ -34,6 +34,12 @@ return {
                     find_files = {
                         hidden = true,
                     },
+                    live_grep = {
+                        hidden = true,
+                    },
+                    grep_string = {
+                        hidden = true,
+                    },
                 },
             })
             require("telescope").load_extension("ui-select")
