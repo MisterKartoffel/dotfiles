@@ -47,7 +47,7 @@
 	],
 	
 "custom/power": {
-	"format" : "⏻",
+	"format" : " ⏻ ",
 	"tooltip": false,
 	"on-click": "wlogout"
 },
@@ -56,8 +56,8 @@
 	"format": "{icon}",
 
 	"format-icons": {
-		"activated": "󰥔",
-		"deactivated": ""
+		"activated": "󰥔 ",
+		"deactivated": " "
 	}
 },
 
@@ -102,7 +102,7 @@
 
 "cpu": {
 	"interval": 10,
-	"format": " {usage}%",
+	"format": " {usage}%",
 
 	"states": {
 		"low": 0,
@@ -113,7 +113,7 @@
 
 "memory": {
 	"interval": 10,
-	"format": " {percentage}%",
+	"format": "  {percentage}%",
 
 	"states": {
 		"low": 0,
