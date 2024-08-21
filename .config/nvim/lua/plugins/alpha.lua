@@ -1,5 +1,6 @@
 return {
     "goolord/alpha-nvim",
+    event = "VimEnter",
     dependencies = {
         "nvim-tree/nvim-web-devicons",
     },
@@ -27,13 +28,11 @@ return {
         }
         dashboard.section.buttons.val = {
             dashboard.button("e", "  ❱ New file", ":ene <BAR> startinsert <CR>"),
-            dashboard.button("f", "  ❱ Find file", ":cd $HOME | Telescope find_files<CR>"),
-            dashboard.button("r", "  ❱ Recent", ":Telescope oldfiles<CR>"),
-            dashboard.button(
-                "s",
-                "  ❱ Settings",
-                ":e $MYVIMRC | :cd $HOME/.config/nvim | :Neotree filesystem toggle left<CR>"
-            ),
+            dashboard.button("SPC ff", "  ❱ Find file", ":cd $HOME | :Telescope find_files<CR>"),
+            dashboard.button("SPC fs", "󰱼  ❱ Find string", ":cd $HOME | :Telescope live_grep<CR>"),
+            dashboard.button("SPC fr", "󱋡  ❱ Recent", ":Telescope oldfiles<CR>"),
+            dashboard.button("SPC wr", "  ❱ Restore past session", ":SessionRestore<CR>"),
+            dashboard.button("s", "  ❱ Settings", ":e $MYVIMRC | :cd $HOME/.config/nvim | :Neotree filesystem toggle left<CR>"),
             dashboard.button("q", "󰩈  ❱ Quit Neovim", ":qa<CR>"),
         }
         local function footer()

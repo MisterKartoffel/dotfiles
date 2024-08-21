@@ -18,4 +18,8 @@ vim.opt.rtp:prepend(lazypath)
 local opts = {}
 
 require("vim-config")
-require("lazy").setup("plugins")
+require("lazy").setup("plugins", {
+    change_detection = {
+        notify = false,
+    }
+})
