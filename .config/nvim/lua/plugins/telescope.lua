@@ -1,6 +1,7 @@
 return {
     {
-        "nvim-telescope/telescope.nvim", tag = "0.1.8",
+        "nvim-telescope/telescope.nvim",
+        tag = "0.1.8",
         dependencies = { "nvim-lua/plenary.nvim" },
         config = function()
             local builtin = require("telescope.builtin")
@@ -12,10 +13,10 @@ return {
                     override_generic_sorter = true,
                     override_file_sorter = true,
                     case_mode = "smart_case",
-                }
+                },
             }
             require("telescope").load_extension("fzf")
-        end
+        end,
     },
     {
         "nvim-telescope/telescope-ui-select.nvim",
@@ -23,21 +24,20 @@ return {
             require("telescope").setup({
                 extensions = {
                     ["ui-select"] = {
-                        require("telescope.themes").get_dropdown {
-                        }
-                    }
+                        require("telescope.themes").get_dropdown({}),
+                    },
                 },
                 pickers = {
                     find_files = {
-                        hidden = true
-                    }
-                }
+                        hidden = true,
+                    },
+                },
             })
             require("telescope").load_extension("ui-select")
-        end
+        end,
     },
     {
         "nvim-telescope/telescope-fzf-native.nvim",
-        build = "make"
-    }
+        build = "make",
+    },
 }

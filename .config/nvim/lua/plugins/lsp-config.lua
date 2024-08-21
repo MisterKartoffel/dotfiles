@@ -3,7 +3,7 @@ return {
         "williamboman/mason.nvim",
         config = function()
             require("mason").setup()
-        end
+        end,
     },
     {
         "williamboman/mason-lspconfig.nvim",
@@ -17,9 +17,9 @@ return {
                     "harper_ls",
                     "yamlls",
                     "hyprls",
-                }
+                },
             })
-        end
+        end,
     },
     {
         "neovim/nvim-lspconfig",
@@ -33,9 +33,9 @@ return {
             lspconfig.yamlls.setup({})
             lspconfig.hyprls.setup({})
 
-            vim.keymap.set('n', 'K', vim.lsp.buf.hover, {})
-            vim.keymap.set('n', 'gd', vim.lsp.buf.definition, {})
-            vim.keymap.set({ 'n', 'v' }, '<leader>ca', vim.lsp.buf.code_action, opts)
-        end
-    }
+            vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
+            vim.keymap.set("n", "gd", vim.lsp.buf.definition, {})
+            vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, opts)
+        end,
+    },
 }
