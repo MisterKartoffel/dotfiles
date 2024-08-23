@@ -13,7 +13,6 @@ return {
                     "lua_ls",
                     "jsonls",
                     "bashls",
-                    "cssls",
                     "harper_ls",
                     "yamlls",
                     "hyprls",
@@ -28,7 +27,6 @@ return {
             lspconfig.lua_ls.setup({})
             lspconfig.jsonls.setup({})
             lspconfig.bashls.setup({})
-            lspconfig.cssls.setup({})
             lspconfig.harper_ls.setup({})
             lspconfig.yamlls.setup({})
             lspconfig.hyprls.setup({})
