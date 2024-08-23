@@ -18,7 +18,7 @@
 		"custom/r_end",
 		"custom/l_end",
 		"hyprland/workspaces",
-    "tray",
+        "tray",
 		"custom/r_end"
 	],
 
@@ -42,6 +42,7 @@
 		"network",
 		"wireplumber",
 		"pulseaudio#microphone",
+        "custom/notification",
 		"custom/r_end",
 		"custom/padding"
 	],
@@ -95,8 +96,8 @@
  
 "hyprland/window": {
 	"format": "{}",
-  "icon": true,
-  "icon-size": 20,
+    "icon": true,
+    "icon-size": 20,
 	"tooltip": 0
 },
 
@@ -157,7 +158,7 @@
 	"format-disconnected": "󰖪 ",
 	"tooltip-format-disconnected": "Disconnected",
 	"format-alt": "<span foreground='#99ffdd'> {bandwidthDownBytes}</span> <span foreground='#ffcc66'> {bandwidthUpBytes}</span>",
-	"interval": 2,
+	"interval": 2
 },
 
 "wireplumber": {
@@ -186,7 +187,30 @@
 	"on-click-right": "pavucontrol -t 4",
 	"on-scroll-up": "pactl set-source-volume @DEFAULT_SOURCE@ +5%",
 	"on-scroll-down": "pactl set-source-volume @DEFAULT_SOURCE@ -5%",
-	"tooltip-format": "{format_source} {source_desc} // {source_volume}%",
+	"tooltip-format": "{format_source} {source_desc} // {source_volume}%"
+},
+
+"custom/notification": {
+    "tooltip": false,
+    "format": "{icon} {}",
+
+    "format-icons": {
+        "notification": "<span foreground='red'><sup></sup></span>",
+        "none": "",
+        "dnd-notification": "<span foreground='red'><sup></sup></span>",
+        "dnd-none": "",
+        "inhibited-notification": "<span foreground='red'><sup></sup></span>",
+        "inhibited-none": "",
+        "dnd-inhibited-notification": "<span foreground='red'><sup></sup></span>",
+        "dnd-inhibited-none": ""
+    },
+
+    "return-type": "json",
+    "exec-if": "which swaync-client",
+    "exec": "swaync-client -swb",
+    "on-click": "swaync-client -t -sw",
+    "on-click-right": "swaync-client -d -sw",
+    "escape": true
 },
 
 "custom/padding": {
