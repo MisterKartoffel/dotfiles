@@ -9,9 +9,7 @@
 
 	"modules-left": [
 		"custom/padding",
-		"custom/l_end",
 		"custom/power",
-		"custom/r_end",
 		"custom/l_end",
 		"idle_inhibitor",
 		"clock",
@@ -24,9 +22,7 @@
 
 	"modules-center": [
 		"custom/padding",
-		"custom/l_end",
 		"hyprland/window",
-		"custom/r_end",
 		"custom/padding"
 	],
 
@@ -43,8 +39,7 @@
 		"wireplumber",
 		"pulseaudio#microphone",
         "custom/notification",
-		"custom/r_end",
-		"custom/padding"
+		"custom/r_end"
 	],
 	
 "custom/power": {

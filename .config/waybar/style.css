@@ -9,9 +9,7 @@
 
 @import "mocha.css";
 
-window#waybar {
-    background: transparent;
-}
+window#waybar { background: transparent; }
 
 tooltip {
     background: @base;
@@ -48,13 +46,9 @@ tooltip {
     transition: all 0.3s cubic-bezier(.55,-0.68,.48,1.682);
 }
 
-#tray menu * {
-    min-height: 16px;
-}
+#tray menu * { min-height: 16px; }
 
-#tray menu separator {
-    min-height: 10px;
-}
+#tray menu separator { min-height: 10px; }
 
 #cpu.low,
 #memory.low,
@@ -99,10 +93,16 @@ tooltip {
     border-bottom: 1px solid @overlay2;
 }
 
-#workspaces,
-#taskbar {
-    padding: 0px;
+/* Modules meant to be standalones */
+#custom-power,
+#window {
+    border-radius: 21px;
+    margin: 5px 0px;
+    padding: 0px 12px;
 }
+
+
+#workspaces { padding: 0px; }
 
 #custom-r_end {
     border-radius: 0px 21px 21px 0px;
