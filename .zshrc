@@ -1,37 +1,69 @@
-# Lines configured by zsh-newuser-install
-HISTFILE=~/.histfile
-HISTSIZE=500
-SAVEHIST=500
-# End of lines configured by zsh-newuser-install
-# The following lines were added by compinstall
-zstyle :compinstall filename '/home/felipe/.zshrc'
+# Set the directory to store zinit and plugins
+ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 
-export EDITOR=nvim
-export VISUAL=nvim
+# Download zinit, if not downloaded
+if [ ! -d "$ZINIT_HOME" ]; then
+    mkdir -p "$(dirname $ZINIT_HOME)"
+    git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
+fi
 
-autoload -Uz compinit
-compinit
-# End of lines added by compinstall
+# Source and load zinit
+source "${ZINIT_HOME}/zinit.zsh"
 
-# Oh-My-Posh startup
+# Initialize oh-my-posh prompt
 eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/config.toml)"
 
-bindkey "^[[3~" delete-char
-bindkey "^[[3;5~" backward-kill-word
-bindkey "^[[1;5D" backward-word
-bindkey "^[[5~" backward-word
-bindkey "^[[1;5C" forward-word
-bindkey "^[[6~" forward-word
-bindkey "^[[H" beginning-of-line
-bindkey "^[[F" end-of-line
+# Load completions
+autoload -Uz compinit && compinit
+zinit cdreplay -q
 
-alias vim="nvim"
-alias fetch="fastfetch --gpu-hide-type integrated"
-alias config="/usr/bin/git --git-dir=$HOME/Dotfiles/ --work-tree=$HOME"
+# Source plugins
+zinit light Aloxaf/fzf-tab
+zinit light zsh-users/zsh-syntax-highlighting
+zinit light zsh-users/zsh-completions
+zinit light zsh-users/zsh-autosuggestions
 
-source ~/.zsh/catppuccin_mocha-zsh-syntax-highlighting.zsh
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+# Keybindings
+bindkey '^[[A' history-search-backward
+bindkey '^[[B' history-search-forward
+bindkey '^[[3~' delete-char
+bindkey '^[[3;5~' backward-kill-word
+bindkey '^[[1;5D' backward-word
+bindkey '^[[5~' backward-word
+bindkey '^[[1;5C' forward-word
+bindkey '^[[6~' forward-word
+bindkey '^[[H' beginning-of-line
+bindkey '^[[F' end-of-line
 
-eval "$(zoxide init zsh)"
-alias cd="z"
+# History
+HISTSIZE=500
+HISTFILE=$HOME/.zsh_history
+SAVEHIST=$HISTSIZE
+HISTDUP=erase
+setopt appendhistory
+setopt sharehistory
+setopt hist_ignore_space
+setopt hist_ignore_all_dups
+setopt hist_save_no_dups
+setopt hist_ignore_dups
+setopt hist_find_no_dups
+
+# Shell integrations
+eval "$(fzf --zsh)"
+eval "$(zoxide init --cmd cd zsh)"
+
+# Completion styling
+zstyle ':completion:*' matcher-list "m:{a-z}={A-Za-z}"
+zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
+zstyle ':completion:*:descriptions' format '[%d]'
+zstyle ':completion:*' special-dirs true
+zstyle ':completion:*' menu no
+zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
+zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
+
+# Aliases
+alias vim='nvim'
+alias fetch='fastfetch --gpu-hide-type integrated'
+alias config='/usr/bin/git --git-dir=$HOME/Dotfiles/ --work-tree=$HOME'
+alias ls='ls -lah --color'
+alias c='clear'
