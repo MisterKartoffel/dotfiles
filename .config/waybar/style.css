@@ -1,9 +1,7 @@
 * {
-    border: none;
-    border-radius: 0px;
     font-family: "JetBrainsMono Nerd Font";
     font-weight: bold;
-    font-size: 10px;
+    font-size: 8pt;
     min-height: 10px;
 }
 
@@ -32,7 +30,7 @@ tooltip {
     color: @base;
     background: @sky;
     padding: 0px 12px;
-    margin: 3px 3px;
+    margin: 3px;
     animation: ws_active 20s ease-in-out 1;
     transition: all 0.4s cubic-bezier(.55,-0.68,.48,1.682);
 }
@@ -46,7 +44,7 @@ tooltip {
 
 #tray menu * { min-height: 16px; }
 
-#tray menu separator { min-height: 10px; }
+#tray menu separator { min-height: 2px; }
 
 #cpu.low,
 #memory.low,
@@ -63,25 +61,14 @@ tooltip {
 #wireplumber.muted,
 #pulseaudio.source-muted { color: @red; }
 
-#backlight,
-#clock,
-#cpu,
-#custom-power,
-#custom-notification,
-#disk,
-#idle_inhibitor,
-#language,
-#memory,
-#network,
-#pulseaudio,
-#wireplumber,
-#custom-spotify,
-#taskbar,
-#tray,
+#custom-power, #custom-reboot, #custom-suspend, #custom-logout, #custom-lock,
+#idle_inhibitor, #clock,
+#workspaces, #tray,
 #window,
-#workspaces,
-#custom-l_end,
-#custom-r_end {
+#cpu, #memory, #disk,
+#backlight, #network, #wireplumber, #pulseaudio, #custom-notification,
+#custom-r_end,
+#custom-l_end {
     color: @text;
     background: @base;
     opacity: 1;
@@ -90,17 +77,6 @@ tooltip {
     border-top: 1px solid @overlay2;
     border-bottom: 1px solid @overlay2;
 }
-
-/* Modules meant to be standalones */
-#custom-power,
-#window {
-    margin: 5px 0px;
-    padding: 0px 12px;
-    border-radius: 21px;
-}
-
-
-#workspaces { padding: 0px; }
 
 #custom-r_end {
     margin-right: 9px;
