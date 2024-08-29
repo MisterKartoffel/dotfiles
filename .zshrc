@@ -51,6 +51,7 @@ setopt hist_find_no_dups
 # Shell integrations
 eval "$(fzf --zsh)"
 eval "$(zoxide init --cmd cd zsh)"
+source ~/.zsh/catppuccin_mocha-zsh-syntax-highlighting.zsh
 
 # Completion styling
 zstyle ':completion:*' matcher-list "m:{a-z}={A-Za-z}"
