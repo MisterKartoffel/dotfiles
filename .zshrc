@@ -64,7 +64,8 @@ zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 
 # Aliases
 alias vim='nvim'
+alias nf='fzf -m --preview="bat --color=always {}" --bind "enter:become(nvim {+})"'
 alias fetch='fastfetch --gpu-hide-type integrated'
 alias config='/usr/bin/git --git-dir=$HOME/Dotfiles/ --work-tree=$HOME'
-alias ls='ls -lah --color'
+alias ll='eza -1la --color=always'
 alias c='clear'
