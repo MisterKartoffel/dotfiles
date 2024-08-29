@@ -54,31 +54,31 @@
     },
 
     "custom/power": {
-        "format" : "<span size='8pt'> </span>",
+        "format": "<span size='9pt'> </span>",
         "tooltip-format": "  power off",
         "on-click": "systemctl poweroff"
     },
 
     "custom/suspend": {
         "format": "<span size='9pt'>󰏦</span>",
-        "tooltip-format": "󰏦  suspend",
+        "tooltip-format": "󰏦 suspend",
         "on-click": "systemctl suspend"
     }, 
 
     "custom/reboot": {
-        "format": "<span size='9pt'> 󰑓</span>",
-        "tooltip-format": "󰑓  reboot",
+        "format": "<span size='9pt'> 🗘 </span>",
+        "tooltip-format": "🗘 reboot",
         "on-click": "systemctl reboot"
     },
 
     "custom/logout": {
-        "format": "<span size='8pt'> 󰍃</span>",
-        "tooltip-format": "󰍃  logout",
+        "format": "<span size='9pt'>󰍃</span>",
+        "tooltip-format": "󰍃 logout",
         "on-click": "hyprctl dispatch exit"
     },
 
     "custom/lock": {
-        "format": "<span size='8pt'> 󰷛 </span>",
+        "format": "<span size='9pt'> 󰷛 </span>",
         "tooltip-format": "󰷛  lock",
         "on-click": "hyprlock"
     },
@@ -97,11 +97,11 @@
         "format": "{icon}",
 
         "format-icons": {
-            "activated": "󰥔 ",
-            "deactivated": " "
+            "activated": "<span size='11pt'>󱫞</span>",
+            "deactivated": "<span size='11pt'>󰔛</span>"
         }
     },
-
+//󰥔
     "clock": {
         "interval": 1,
         "format": "{:%T | 󰃭 %A, %d·%m·%y}",
@@ -177,7 +177,7 @@
 
     "cpu": {
         "interval": 10,
-        "format": " {usage}%",
+        "format": " {usage}%",
 
         "states": {
             "low": 0,
@@ -188,7 +188,7 @@
 
     "memory": {
         "interval": 10,
-        "format": "  {percentage}%",
+        "format": "󰾆 {percentage}%",
 
         "states": {
             "low": 0,
@@ -199,7 +199,7 @@
 
     "disk": {
         "interval": 10,
-        "format": "🖴 {used} / {total} ({percentage_used}%)",
+        "format": " {used} / {total} ({percentage_used}%)",
 
         "states": {
             "low": 0,
