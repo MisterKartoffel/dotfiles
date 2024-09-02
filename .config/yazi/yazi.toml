@@ -35,7 +35,7 @@ open = [
 	{ run = 'xdg-open "$1"', desc = "Open", for = "linux" },
 ]
 reveal = [
-	{ run = 'xdg-open "$(dirname "$1")"', desc = "Reveal", for = "linux" },
+	{ run = 'cd "$(dirname "$1")"', desc = "Reveal", for = "linux" },
 ]
 extract = [
 	{ run = 'ya pub extract --list "$@"', desc = "Extract here", for = "unix" },
