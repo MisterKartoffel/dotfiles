@@ -54,13 +54,13 @@
     },
 
     "custom/power": {
-        "format": "<span size='9pt'> </span>",
+        "format": "<span size='9pt'></span>",
         "tooltip-format": "  power off",
         "on-click": "systemctl poweroff"
     },
 
     "custom/suspend": {
-        "format": "<span size='9pt'>󰏦</span>",
+        "format": "<span size='9pt'> 󰏦</span>",
         "tooltip-format": "󰏦 suspend",
         "on-click": "systemctl suspend"
     }, 
