@@ -24,16 +24,16 @@ zinit light zsh-users/zsh-completions
 zinit light zsh-users/zsh-autosuggestions
 
 # Keybindings
-bindkey '^[[A' history-search-backward
-bindkey '^[[B' history-search-forward
-bindkey '^[[3~' delete-char
-bindkey '^[[3;5~' backward-kill-word
-bindkey '^[[1;5D' backward-word
-bindkey '^[[5~' backward-word
-bindkey '^[[1;5C' forward-word
-bindkey '^[[6~' forward-word
-bindkey '^[[H' beginning-of-line
-bindkey '^[[F' end-of-line
+bindkey "^[[A" history-search-backward
+bindkey "^[[B" history-search-forward
+bindkey "^[[3~" delete-char
+bindkey "^[[3;5~" backward-kill-word
+bindkey "^[[1;5D" backward-word
+bindkey "^[[5~" backward-word
+bindkey "^[[1;5C" forward-word
+bindkey "^[[6~" forward-word
+bindkey "^[[H" beginning-of-line
+bindkey "^[[F" end-of-line
 
 # History
 HISTSIZE=500
@@ -56,25 +56,26 @@ source ~/.zsh/catppuccin_mocha-zsh-syntax-highlighting.zsh
 export PATH="$HOME/Scripts:$PATH"
 export LS_COLORS="$(vivid generate catppuccin-mocha)"
 export FZF_DEFAULT_OPTS=" \
---color=bg+:#313244,bg:#1e1e2e,spinner:#f5e0dc,hl:#f38ba8 \
---color=fg:#cdd6f4,header:#f38ba8,info:#cba6f7,pointer:#f5e0dc \
---color=marker:#b4befe,fg+:#cdd6f4,prompt:#cba6f7,hl+:#f38ba8 \
---color=selected-bg:#45475a \
---multi"
+    --color=bg+:#313244,bg:#1e1e2e,spinner:#f5e0dc,hl:#f38ba8 \
+    --color=fg:#cdd6f4,header:#f38ba8,info:#cba6f7,pointer:#f5e0dc \
+    --color=marker:#b4befe,fg+:#cdd6f4,prompt:#cba6f7,hl+:#f38ba8 \
+    --color=selected-bg:#45475a \
+    --multi"
 
 # Completion styling
-zstyle ':completion:*' matcher-list "m:{a-z}={A-Za-z}"
-zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
-zstyle ':completion:*:descriptions' format '[%d]'
-zstyle ':completion:*' special-dirs true
-zstyle ':completion:*' menu no
-zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
-zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
+zstyle ":completion:*" matcher-list "m:{a-z}={A-Za-z}"
+zstyle ":completion:*" list-colors "${(s.:.)LS_COLORS}"
+zstyle ":completion:*:descriptions" format "[%d]"
+zstyle ":completion:*" special-dirs true
+zstyle ":completion:*" menu no
+zstyle ":fzf-tab:complete:cd:*" fzf-preview "ls --color $realpath"
+zstyle ":fzf-tab:complete:__zoxide_z:*" fzf-preview "ls --color $realpath"
 
 # Aliases
-alias vim='nvim'
-alias nf='fzf -m --preview="bat --color=always {}" --bind "enter:become(nvim {+})"'
-alias fetch='fastfetch --gpu-hide-type integrated'
-alias config='/usr/bin/git --git-dir=$HOME/Dotfiles/ --work-tree=$HOME'
-alias ll='eza -1la --color=always'
-alias c='clear'
+alias vim="nvim"
+alias nf="fzf -m --preview='bat --color=always {}' --bind 'enter:become(nvim {+})'"
+alias fetch="fastfetch --gpu-hide-type integrated"
+alias config="/usr/bin/git --git-dir=$HOME/Dotfiles/ --work-tree=$HOME"
+alias ll="eza -1la --color=always"
+alias c="clear"
+alias :q="exit"
