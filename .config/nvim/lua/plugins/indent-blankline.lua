@@ -5,7 +5,5 @@ return {
         "BufNewFile",
     },
     main = "ibl",
-    opts = {
-        indent = { char = "┊" },
-    },
+    opts = { indent = { char = "┊" }, },
 }

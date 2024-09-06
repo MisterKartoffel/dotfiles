@@ -9,7 +9,10 @@ return {
                 build = "make"
             },
         },
+
         config = function()
+            local telescope = require("telescope")
+
             extensions = {
                 fzf = {
                     fuzzy = true,
@@ -18,16 +21,21 @@ return {
                     case_mode = "smart_case",
                 },
             }
-            require("telescope").load_extension("fzf")
+
+            telescope.load_extension("fzf")
         end,
     },
     {
         "nvim-telescope/telescope-ui-select.nvim",
+
         config = function()
-            require("telescope").setup({
+            local telescope = require("telescope")
+            local themes = require("telescope.themes")
+
+            telescope.setup({
                 extensions = {
                     ["ui-select"] = {
-                        require("telescope.themes").get_dropdown({}),
+                        themes.get_dropdown({}),
                     },
                 },
                 pickers = {
@@ -42,7 +50,8 @@ return {
                     },
                 },
             })
-            require("telescope").load_extension("ui-select")
+
+            telescope.load_extension("ui-select")
         end,
     },
 }
