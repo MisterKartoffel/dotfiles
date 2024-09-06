@@ -19,6 +19,9 @@ local keybind = vim.keymap.set -- Saves keystrokes
 keybind("n", "<leader>wr", "<CMD>SessionRestore<CR>", { desc = "Restore session for CWD" })
 keybind("n", "<leader>ws", "<CMD>SessionSave<CR>", { desc = "Save session for CWD" })
 
+-- Lazygit keybindings
+keybind("n", "<leader>lg", "<CMD>LazyGit<CR>", { desc = "Open LazyGit" })
+
 -- LSP and None-LS keybindings
 keybind("n", "<leader>ch", vim.lsp.buf.hover, { desc = "Display info about symbol under cursor" })
 keybind("n", "<leader>cd", vim.lsp.buf.definition, { desc = "Jump to definition for symbol under cursor" })
