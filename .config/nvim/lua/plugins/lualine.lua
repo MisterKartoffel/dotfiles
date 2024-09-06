@@ -1,9 +1,26 @@
 return {
     "nvim-lualine/lualine.nvim",
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+
     config = function()
-        require("lualine").setup({
+        local lualine = require("lualine")
+        local lazy_status = require("lazy.status")
+
+        lualine.setup({
             options = {
-                theme = "palenight",
+                theme = "catppuccin",
+            },
+            sections = {
+                lualine_x = {
+                {
+                    lazy_status.updates,
+                    cond = lazy_status.has_updates,
+                    color = { "#ff9e64" },
+                },
+                { "encoding" },
+                { "fileformat" },
+                { "filetype" },
+                },
             },
         })
     end,
