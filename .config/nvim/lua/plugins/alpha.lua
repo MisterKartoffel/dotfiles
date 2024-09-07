@@ -29,7 +29,7 @@ return {
         }
         dashboard.section.buttons.val = {
             button("e", "  ❱ New file", "<CMD>ene <BAR> startinsert <CR>"),
-            button("SPC ff", "  ❱ Find file", "<CMD>cd $HOME | <CMD>Telescope find_files<CR>"),
+            button("SPC ff", "  ❱ Find file", "<CMD>cd $HOME<CR> <CMD>Telescope find_files<CR>"),
             button("SPC fs", "󰱼  ❱ Find string", "<CMD>cd $HOME<CR> <CMD>Telescope live_grep<CR>"),
             button("SPC fr", "󱋡  ❱ Recent", "<CMD>Telescope oldfiles<CR>"),
             button("SPC wr", "  ❱ Restore past session", "<CMD>SessionRestore<CR>"),
