@@ -8,6 +8,7 @@ return {
     config = function()
         local alpha = require("alpha")
         local dashboard = require("alpha.themes.dashboard")
+        local button = dashboard.button
 
         dashboard.section.header.val = {
             [[                                                                       ]],
@@ -27,13 +28,14 @@ return {
             [[                                                                       ]],
         }
         dashboard.section.buttons.val = {
-            dashboard.button("e", "  ❱ New file", ":ene <BAR> startinsert <CR>"),
-            dashboard.button("SPC ff", "  ❱ Find file", ":cd $HOME | :Telescope find_files<CR>"),
-            dashboard.button("SPC fs", "󰱼  ❱ Find string", ":cd $HOME | :Telescope live_grep<CR>"),
-            dashboard.button("SPC fr", "󱋡  ❱ Recent", ":Telescope oldfiles<CR>"),
-            dashboard.button("SPC wr", "  ❱ Restore past session", ":SessionRestore<CR>"),
-            dashboard.button("s", "  ❱ Settings", ":e $MYVIMRC | :cd $HOME/.config/nvim | :Neotree filesystem toggle left<CR>"),
-            dashboard.button("q", "󰩈  ❱ Quit Neovim", ":qa<CR>"),
+            button("e", "  ❱ New file", "<CMD>ene <BAR> startinsert <CR>"),
+            button("SPC ff", "  ❱ Find file", "<CMD>cd $HOME | <CMD>Telescope find_files<CR>"),
+            button("SPC fs", "󰱼  ❱ Find string", "<CMD>cd $HOME<CR> <CMD>Telescope live_grep<CR>"),
+            button("SPC fr", "󱋡  ❱ Recent", "<CMD>Telescope oldfiles<CR>"),
+            button("SPC wr", "  ❱ Restore past session", "<CMD>SessionRestore<CR>"),
+            button("SPC wf", "  ❱ Search session", "<CMD>SessionSearch<CR>"),
+            button("s", "  ❱ Settings", "<CMD>e $MYVIMRC<CR> <CMD>cd $HOME/.config/nvim<CR> <CMD>Neotree filesystem toggle left<CR>"),
+            button("q", "󰩈  ❱ Quit Neovim", "<CMD>qa<CR>"),
         }
         local function footer()
             local total_plugins = require("lazy").stats().count
