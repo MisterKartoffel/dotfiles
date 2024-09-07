@@ -1,17 +1,20 @@
 return {
     "rmagatti/auto-session",
-    config = function()
-        local auto_session = require("auto-session")
-
-        auto_session.setup({
-            auto_restore_enabled = false,
-            auto_session_suppress_dirs = {
-                "~/",
-                "~/Downloads/",
-                "~/Wallpapers/",
-                "~/Documents/",
-                "~/Screenshots/",
-            },
-        })
-    end
+    lazy = false,
+    dependencies = {
+        "nvim-telescope/telescope.nvim"
+    },
+    opts = {
+        auto_restore = false,
+        suppressed_dirs = {
+            "~/",
+            "~/Downloads/",
+            "~/Wallpapers/",
+            "~/Documents/",
+            "~/Screenshots/",
+        },
+        session_lens = {
+            previewer = true,
+        },
+    },
 }
