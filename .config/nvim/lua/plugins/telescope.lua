@@ -1,13 +1,10 @@
 return {
     {
         "nvim-telescope/telescope.nvim",
-        tag = "0.1.8",
+        branch = "0.1.x",
         dependencies = {
             "nvim-lua/plenary.nvim",
-            {
-                "nvim-telescope/telescope-fzf-native.nvim",
-                build = "make"
-            },
+            { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
         },
 
         config = function()
@@ -27,6 +24,7 @@ return {
     },
     {
         "nvim-telescope/telescope-ui-select.nvim",
+        dependencies = { "nvim-telescope/telescope.nvim" },
 
         config = function()
             local telescope = require("telescope")
@@ -40,12 +38,6 @@ return {
                 },
                 pickers = {
                     find_files = {
-                        hidden = true,
-                    },
-                    live_grep = {
-                        hidden = true,
-                    },
-                    grep_string = {
                         hidden = true,
                     },
                 },
