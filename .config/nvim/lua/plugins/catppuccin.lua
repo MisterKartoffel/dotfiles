@@ -1,22 +1,23 @@
 return {
-	"catppuccin/nvim",
-	name = "catppuccin",
-	priority = 1000,
+    "catppuccin/nvim",
+    name = "catppuccin",
+    priority = 1000,
 
-	config = function()
+    config = function()
         local catppuccin = require("catppuccin")
-        vim.cmd.colorscheme("catppuccin")
 
         catppuccin.setup({
             flavour = "mocha",
             integrations = {
+                cmp = true,
                 mason = true,
                 neotree = true,
-                cmp = true,
-                treesitter = true,
                 telescope = true,
+                treesitter = true,
                 which_key = true,
             },
+
+            vim.cmd.colorscheme("catppuccin")
         })
-    end
+    end,
 }
