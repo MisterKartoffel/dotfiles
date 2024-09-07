@@ -7,6 +7,7 @@ vim.cmd("set tabstop=4")
 vim.cmd("set softtabstop=4")
 vim.cmd("set shiftwidth=4")
 vim.cmd("set number")
+vim.o.sessionoptions="blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
 vim.g.mapleader = " "
 
 
@@ -18,6 +19,7 @@ local keybind = vim.keymap.set -- Saves keystrokes
 -- Auto-session keybindings
 keybind("n", "<leader>wr", "<CMD>SessionRestore<CR>", { desc = "Restore session for CWD" })
 keybind("n", "<leader>ws", "<CMD>SessionSave<CR>", { desc = "Save session for CWD" })
+keybind("n", "<leader>wf", "<CMD>SessionSearch<CR>", { desc = "Search sessions" })
 
 -- Lazygit keybindings
 keybind("n", "<leader>lg", "<CMD>LazyGit<CR>", { desc = "Open LazyGit" })
