@@ -9,14 +9,7 @@ return {
             local mason_lspconfig = require("mason-lspconfig")
 
             mason_lspconfig.setup({
-                ensure_installed = {
-                    "lua_ls",
-                    "bashls",
-                    "yamlls",
-                    "hyprls",
-                    "ts_ls",
-                    "taplo",
-                },
+                automatic_installation = true,
             })
         end,
     },
@@ -41,6 +34,7 @@ return {
             lspconfig.hyprls.setup({ capabilities = capabilities })
             lspconfig.ts_ls.setup({ capabilities = capabilities })
             lspconfig.taplo.setup({ capabilities = capabilities })
+            lspconfig.biome.setup({ capabilities = capabilities })
         end,
     },
 }
