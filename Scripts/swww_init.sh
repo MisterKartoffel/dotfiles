@@ -1,6 +1,6 @@
 #!/bin/sh
 
-WALLPAPER=$(find /home/felipe/Wallpapers -type f | shuf -n 1)
+WALLPAPER=$(find /home/felipe/Pictures/Wallpapers -type f | shuf -n 1)
 
 swww img $WALLPAPER                                                                                 # Set new wallpaper
 cp -f $WALLPAPER /usr/share/sddm/themes/sugar-candy/Backgrounds/background.png	                    # Update SDDM background to new wallpaper
