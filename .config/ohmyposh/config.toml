@@ -8,25 +8,13 @@ alignment = "left"
 newline = true
 
     [[blocks.segments]]
-    foreground = "p:os"
-    style = "plain"
-    template = " {{.Icon}} "
-    type = "os"
-
-    [[blocks.segments]]
-    foreground = "p:os"
-    style = "plain"
-    template = "{{ if .Root }}\uF0E7{{ end }} "
-    type = "session" 
-
-    [[blocks.segments]]
     foreground = "p:pink"
     style = "plain"
     template = "{{ .Path }} "
     type = "path"
 
         [blocks.segments.properties]
-        folder_icon = "..\uE5fe.."
+        folder_icon = "..🗁 .."
         home_icon = "~"
         style = "agnoster_short"
 
@@ -57,7 +45,7 @@ newline = true
     [[blocks.segments]]
     foreground = "p:closer"
     style = "plain"
-    template = " ❱"
+    template = "❱"
     type = "text"
     foreground_templates = [
         "{{if gt .Code 0}}p:red{{end}}",
@@ -66,7 +54,7 @@ newline = true
 
 [transient_prompt]
 background = "transparent"
-template = " ❱ "
+template = "❱ "
 foreground_templates = [
     "{{if gt .Code 0}}p:red{{end}}",
     "{{if eq .Code 0}}p:closer{{end}}",
@@ -75,7 +63,7 @@ foreground_templates = [
 [secondary_prompt]
 foreground = "p:closer"
 background = "transparent"
-template = " ❱❱ "
+template = "❱❱ "
 
 [palette]
 os = "#ACB0BE"
