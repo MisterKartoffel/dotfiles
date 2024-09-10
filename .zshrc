@@ -62,6 +62,10 @@ export FZF_DEFAULT_OPTS=" \
     --color=selected-bg:#45475a \
     --multi"
 
+# Environments
+export EDITOR=nvim
+export VISUAL=nvim
+
 # Completion styling
 zstyle ":completion:*" matcher-list "m:{a-z}={A-Za-z}"
 zstyle ":completion:*" list-colors "${(s.:.)LS_COLORS}"
@@ -73,9 +77,25 @@ zstyle ":fzf-tab:complete:__zoxide_z:*" fzf-preview "ls --color $realpath"
 
 # Aliases
 alias vim="nvim"
-alias nf="fzf -m --preview='bat --color=always {}' --bind 'enter:become(nvim {+})'"
 alias fetch="fastfetch --gpu-hide-type integrated"
 alias config="/usr/bin/git --git-dir=$HOME/Dotfiles/ --work-tree=$HOME"
 alias ll="eza -1la --color=always"
 alias c="clear"
 alias :q="exit"
+
+# Helper functions
+nf() {
+    fzf -m --preview='bat --color=always {}' --bind='enter:become($EDITOR {+})'
+}
+
+cdf() {
+    cd $(fd -Ht d . |
+        fzf --preview='eza -1la --color=always {}' $1)
+}
+
+rmf() {
+    iterative-rm.sh $(ls |
+                    fzf -m --preview='if [[ -d {} ]]; then eza -1la --color=always {}; else bat --color=always {}; fi' |
+                    grep -o '[^ ]*$' |
+                    xargs readlink -f)
+}
