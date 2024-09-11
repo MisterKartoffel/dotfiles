@@ -10,6 +10,7 @@ return {
         local dashboard = require("alpha.themes.dashboard")
         local button = dashboard.button
 
+-- Header {{{
         dashboard.section.header.val = {
             [[                                                                       ]],
             [[                                                                       ]],
@@ -27,6 +28,9 @@ return {
             [[                                                                       ]],
             [[                                                                       ]],
         }
+-- }}}
+
+-- Buttons {{{
         dashboard.section.buttons.val = {
             button("e", "  ❱ New file", "<CMD>ene <BAR> startinsert <CR>"),
             button("SPC ff", "  ❱ Find file", "<CMD>cd $HOME<CR> <CMD>Telescope find_files<CR>"),
@@ -37,6 +41,9 @@ return {
             button("s", "  ❱ Settings", "<CMD>e $MYVIMRC<CR> <CMD>cd $HOME/.config/nvim<CR> <CMD>Neotree filesystem toggle left<CR>"),
             button("q", "󰩈  ❱ Quit Neovim", "<CMD>qa<CR>"),
         }
+-- }}}
+
+-- Footer {{{
         local function footer()
             local total_plugins = require("lazy").stats().count
             local version = vim.version()
@@ -45,6 +52,8 @@ return {
             return "  " .. total_plugins .. " plugins" .. nvim_version_info
         end
         dashboard.section.footer.val = footer()
+--}}}
+
         alpha.setup(dashboard.opts)
         vim.cmd([[
             autocmd FileType alpha setlocal nofoldenable
