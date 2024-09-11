@@ -1,4 +1,4 @@
-[manager]
+[manager] # {{{
 cwd = { fg = "#94e2d5" }
 
 # Hovered
@@ -30,8 +30,9 @@ border_style  = { fg = "#7f849c" }
 
 # Highlighting
 syntect_theme = "~/.config/yazi/Catppuccin-mocha.tmTheme"
+# }}}
 
-[status]
+[status] # {{{
 separator_open  = ""
 separator_close = ""
 separator_style = { fg = "#45475a", bg = "#45475a" }
@@ -52,57 +53,62 @@ permissions_r = { fg = "#f9e2af" }
 permissions_w = { fg = "#f38ba8" }
 permissions_x = { fg = "#a6e3a1" }
 permissions_s = { fg = "#7f849c" }
+# }}}
 
-[input]
+[input] # {{{
 border   = { fg = "#89b4fa" }
 title    = {}
 value    = {}
 selected = { reversed = true }
+# }}}
 
-[select]
+[select] # {{{
 border   = { fg = "#89b4fa" }
 active   = { fg = "#f5c2e7" }
 inactive = {}
+# }}}
 
-[tasks]
+[tasks] # {{{
 border  = { fg = "#89b4fa" }
 title   = {}
 hovered = { underline = true }
+# }}}
 
-[which]
+[which] # {{{
 mask            = { bg = "#313244" }
 cand            = { fg = "#94e2d5" }
 rest            = { fg = "#9399b2" }
 desc            = { fg = "#f5c2e7" }
 separator       = "  "
 separator_style = { fg = "#585b70" }
+# }}}
 
-[help]
+[help] # {{{
 on      = { fg = "#f5c2e7" }
 exec    = { fg = "#94e2d5" }
 desc    = { fg = "#9399b2" }
 hovered = { bg = "#585b70", bold = true }
 footer  = { fg = "#45475a", bg = "#cdd6f4" }
+# }}}
 
-[filetype]
-
+[filetype] # {{{
 rules = [
 	# Media
 	{ mime = "image/*", fg = "#94e2d5" },
 	{ mime = "{audio,video}/*", fg = "#f9e2af" },
 
 	# Archives
-  { mime = "application/{,g}zip", fg = "#f5c2e7" },
+    { mime = "application/{,g}zip", fg = "#f5c2e7" },
 	{ mime = "application/x-{tar,bzip*,7z-compressed,xz,rar}", fg = "#f5c2e7" },
 
 	# Fallback
 	{ name = "*", fg = "#cdd6f4" },
 	{ name = "*/", fg = "#89b4fa" }
 ]
+# }}}
 
-[icon]
-
-files = [
+[icon] # {{{
+files = [ # {{{
   { name = "gulpfile.js", text = "", fg_dark = "#f38ba8", fg_light = "#f38ba8" },
   { name = ".babelrc", text = "", fg_dark = "#f9e2af", fg_light = "#f9e2af" },
   { name = "copying.lesser", text = "", fg_dark = "#f9e2af", fg_light = "#f9e2af" },
@@ -261,8 +267,9 @@ files = [
   { name = ".prettierrc.json", text = "", fg_dark = "#89b4fa", fg_light = "#89b4fa" },
   { name = ".npmignore", text = "", fg_dark = "#f38ba8", fg_light = "#f38ba8" },
   { name = ".gitmodules", text = "", fg_dark = "#fab387", fg_light = "#fab387" },
-]
-exts = [
+] # }}}
+
+exts = [ # {{{
   { name = "rake", text = "", fg_dark = "#313244", fg_light = "#313244" },
   { name = "skp", text = "󰻫", fg_dark = "#a6e3a1", fg_light = "#a6e3a1" },
   { name = "eln", text = "", fg_dark = "#7f849c", fg_light = "#7f849c" },
@@ -695,4 +702,5 @@ exts = [
   { name = "cob", text = "⚙", fg_dark = "#585b70", fg_light = "#585b70" },
   { name = "cmake", text = "", fg_dark = "#7f849c", fg_light = "#7f849c" },
   { name = "webp", text = "", fg_dark = "#7f849c", fg_light = "#7f849c" },
-]
+] # }}}
+# }}}
