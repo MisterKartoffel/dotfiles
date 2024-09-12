@@ -6,6 +6,7 @@ return {
         flavour = "mocha",
         integrations = {
             cmp = true,
+            gitsigns = true,
             mason = true,
             neotree = true,
             telescope = true,
