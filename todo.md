@@ -8,12 +8,14 @@ Steps:
 1. Run `videoinfo` in the GRUB terminal, see no output
 2. Change `GRUB_TERMINAL_OUTPUT` to `console`
 3. Also changed `GRUB_TIMEOUT_STYLE` to `hidden`
+
+- [x] Learn how to set default applications through the XDG MIME Standard (Sept. 12th, 19:03)
+Steps:
+1. Realize it's done by default.
 # }}}
 
 # Essentials
-- [ ] Learn how to set default applications through the XDG MIME Standard
-    Sources:
-    https://wiki.archlinux.org/title/XDG_MIME_Applications
+- [ ] Move all themes to $HOME/{.themes,.icons}
 
 # Non-essentials {{{
 - [ ] Set up Neovim to work with LaTeX files
