@@ -31,8 +31,13 @@ local bind = vim.keymap.set -- Saves keystrokes
     bind("n", "<leader>wf", ":SessionSearch<CR>", { desc = "Search sessions" })
 -- }}}
 
+-- Gitsigns {{{
+    bind("n", "<leader>gp", ":Gitsigns preview_hunk<CR>", { desc = "Preview git hunk" })
+    bind("n", "<leader>gb", ":Gitsigns toggle_current_line_blame<CR>", { desc = "Toggle line blame view" })
+-- }}}
+
 -- Lazygit {{{
-    bind("n", "<leader>lg", ":LazyGit<CR>", { desc = "Open LazyGit" })
+    bind("n", "<leader>gl", ":LazyGit<CR>", { desc = "Open LazyGit" })
 -- }}}
 
 -- LSP and None-LS {{{
