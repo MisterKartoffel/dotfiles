@@ -80,7 +80,7 @@ alias vim="nvim"
 alias fetch="fastfetch --gpu-hide-type integrated"
 alias config="/usr/bin/git --git-dir=$HOME/Dotfiles/ --work-tree=$HOME"
 alias lazyconfig="lazygit --git-dir=$HOME/Dotfiles/ --work-tree=$HOME"
-alias ll="eza -1la --color=always"
+alias ll="eza -1la --color=always --icons=always"
 alias c="clear"
 alias q="exit"
 
@@ -91,12 +91,12 @@ nf() {
 
 cdf() {
     cd $(fd -Ht d . |
-        fzf --preview='eza -1la --color=always {}' $1)
+        fzf --preview='eza -1la --color=always --icons=always {}' $1)
 }
 
 rmf() {
     iterative-rm.sh $(ls |
-                    fzf -m --preview='if [[ -d {} ]]; then eza -1la --color=always {}; else bat --color=always {}; fi' |
+                    fzf -m --preview='if [[ -d {} ]]; then eza -1la --color=always --icons=always {}; else bat --color=always {}; fi' |
                     grep -o '[^ ]*$' |
                     xargs readlink -f)
 }
