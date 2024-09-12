@@ -3,13 +3,14 @@
 # ░█░ █▄█ █▄▀ █▄█
 
 # Completed {{{
+- [x] Fix GRUB menu not showing (Sept. 12th, 02:19)
+Steps:
+1. Run `videoinfo` in the GRUB terminal, see no output
+2. Change `GRUB_TERMINAL_OUTPUT` to `console`
+3. Also changed `GRUB_TIMEOUT_STYLE` to `hidden`
 # }}}
 
 # Essentials
-- [ ] Fix GRUB menu not showing
-    Sources:
-    https://wiki.archlinux.org/title/GRUB#GRUB_is_installed_but_the_menu_is_not_shown_at_boot
-
 - [ ] Learn how to set default applications through the XDG MIME Standard
     Sources:
     https://wiki.archlinux.org/title/XDG_MIME_Applications
