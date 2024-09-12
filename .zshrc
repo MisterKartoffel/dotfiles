@@ -82,7 +82,7 @@ alias config="/usr/bin/git --git-dir=$HOME/Dotfiles/ --work-tree=$HOME"
 alias lazyconfig="lazygit --git-dir=$HOME/Dotfiles/ --work-tree=$HOME"
 alias ll="eza -1la --color=always"
 alias c="clear"
-alias :q="exit"
+alias q="exit"
 
 # Helper functions
 nf() {
