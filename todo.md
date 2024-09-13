@@ -3,13 +3,13 @@
 # ░█░ █▄█ █▄▀ █▄█
 
 # Completed {{{
-- [x] Fix GRUB menu not showing (Sept. 12th, 02:19)
+- [x] Fix GRUB menu not showing
 Steps:
 1. Run `videoinfo` in the GRUB terminal, see no output
 2. Change `GRUB_TERMINAL_OUTPUT` to `console`
 3. Also changed `GRUB_TIMEOUT_STYLE` to `hidden`
 
-- [x] Learn how to set default applications through the XDG MIME Standard (Sept. 12th, 19:03)
+- [x] Learn how to set default applications through the XDG MIME Standard
 Steps:
 1. Realize it's done by default.
 # }}}
