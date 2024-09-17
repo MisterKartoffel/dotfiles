@@ -21,8 +21,10 @@ Steps:
 4. Resize /dev/sda1 to 1GiB.
 5. Resize FAT32 filesystem in /dev/sda1 to 1GiB.
 6. ERROR: No tool currently available can resize a FAT32 filesystem that is 256MiB or smaller.
-6.1. FALLBACK: Boot into Arch install ISO, delete and remake /dev/sda1 with a size of 1GiB.
-6.2. Restore /boot backup from /.bootbackup/*.
+6.1. In GParted, reformat /dev/sda1 to ext4, resize to 1GiB, reformat to FAT32.
+6.2. Boot Arch Linux live installation media.
+6.3. Mount root subvolume with `mount /dev/sda2 /mnt`.
+6.4. Restore /boot backup from /.bootbackup/*.
 7. Reboot, system update, reinstall and reconfigure GRUB for good measure.
 8. Created snapper snapshot #426. }}}
 # }}}
