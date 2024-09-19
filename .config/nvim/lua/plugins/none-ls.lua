@@ -10,6 +10,7 @@ return {
                 null_ls.builtins.formatting.stylua,
                 null_ls.builtins.formatting.biome,
                 null_ls.builtins.diagnostics.shellcheck,
+                null_ls.builtins.code_actions.shellcheck,
             },
         })
     end,
