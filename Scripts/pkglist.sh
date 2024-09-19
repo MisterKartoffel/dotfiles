@@ -3,7 +3,8 @@
 pkgListDir="$HOME/.config/pkglists"
 
 function setupListings () {
-    local creationTime="$(date --rfc-3339="seconds")"
+    local creationTime
+    creationTime="$(date --rfc-3339="seconds")"
 
     case "$1" in
         aur)
