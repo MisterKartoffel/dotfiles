@@ -1,30 +1,28 @@
 #!/bin/bash
 
 pkgListDir="$HOME/.config/pkglists"
+creationTime="$(date --rfc-3339="seconds")"
 
 function setupListings () {
-    local creationTime
-    creationTime="$(date --rfc-3339="seconds")"
-
     case "$1" in
         aur)
             pacman -Qqem > "$pkgListDir"/"$1"/"AUR-$creationTime.txt"
-            echo "Created explicitly installed AUR package listing at $pkgListDir/$1/'AUR-$creationTime'"
+            echo -e "Created explicitly installed AUR package listing at $pkgListDir/$1/'AUR-$creationTime'\n"
             ;;
 
         flatpak)
             flatpak list --app > "$pkgListDir"/"$1"/"FLATPAK-$creationTime.txt"
-            echo "Created installed Flatpak apps listing at $pkgListDir/$1/'FLATPAK-$creationTime.txt'"
+            echo -e "Created installed Flatpak apps listing at $pkgListDir/$1/'FLATPAK-$creationTime.txt'\n"
             ;;
 
         optional)
             comm -13 <(pacman -Qqdt | sort) <(pacman -Qqdtt | sort) > "$pkgListDir"/"$1"/"OPTIONAL-$creationTime.txt"
-            echo "Created installed optional dependency package listing at $pkgListDir/$1/'OPTIONAL-$creationTime.txt'"
+            echo -e "Created installed optional dependency package listing at $pkgListDir/$1/'OPTIONAL-$creationTime.txt'\n"
             ;;
 
         repositories)
             pacman -Qqten > "$pkgListDir"/"$1"/"EXPLICIT-$creationTime.txt"
-            echo "Created explicitly installed package listing at $pkgListDir/$1/'EXPLICIT-$creationTime'"
+            echo -e "Created explicitly installed package listing at $pkgListDir/$1/'EXPLICIT-$creationTime'\n"
             ;;
 
         *)
@@ -44,7 +42,7 @@ function setupDirectories () {
             exit 1
         elif [ ! -e "$pkgListDir" ]; then
             mkdir "$pkgListDir"
-            echo "Package listing master directory created at $pkgListDir"
+            echo -e "Package listing master directory created at $pkgListDir\n"
         fi
 
         if [ -f "$pkgListDir"/"$source" ]; then
@@ -53,8 +51,9 @@ function setupDirectories () {
         elif [ ! -e "$pkgListDir"/"$source" ]; then
             mkdir -p "$pkgListDir"/"$source"
             echo "Created $source listing directory at $pkgListDir/$source"
-            setupListings "$source"
         fi
+
+        setupListings "$source"
     done
 }
 
