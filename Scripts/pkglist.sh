@@ -1,6 +1,7 @@
 #!/bin/bash
 
-# Source for all list generating commands: https://wiki.archlinux.org/title/Pacman/Tips_and_tricks#List_of_installed_packages
+# Source for all list generating commands:
+# https://wiki.archlinux.org/title/Pacman/Tips_and_tricks#List_of_installed_packages
 
 pkgListDir="$HOME/.config/pkglists"
 creationTime="$(date --rfc-3339="seconds")"
@@ -22,7 +23,7 @@ function setupListings () {
             echo -e "Created installed optional dependency package listing at $pkgListDir/$1/'OPTIONAL-$creationTime.txt'\n"
             ;;
 
-        repositories)
+        explicit)
             pacman -Qqten > "$pkgListDir"/"$1"/"EXPLICIT-$creationTime.txt"
             echo -e "Created explicitly installed package listing at $pkgListDir/$1/'EXPLICIT-$creationTime'\n"
             ;;
@@ -32,8 +33,6 @@ function setupListings () {
             exit 1
             ;;
     esac
-
-    unset creationTime
 }
 
 function setupDirectories () {
@@ -59,7 +58,7 @@ function setupDirectories () {
     done
 }
 
-setupDirectories "aur" "flatpak" "optional" "repositories"
+setupDirectories "aur" "flatpak" "optional" "explicit"
 
 unset pkgListDir
 unset creationTime
