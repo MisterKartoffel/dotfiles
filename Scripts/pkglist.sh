@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# Source for all list generating commands: https://wiki.archlinux.org/title/Pacman/Tips_and_tricks#List_of_installed_packages
+
 pkgListDir="$HOME/.config/pkglists"
 creationTime="$(date --rfc-3339="seconds")"
 
@@ -60,5 +62,6 @@ function setupDirectories () {
 setupDirectories "aur" "flatpak" "optional" "repositories"
 
 unset pkgListDir
-unset setupDirectories
+unset creationTime
 unset setupListings
+unset setupDirectories
