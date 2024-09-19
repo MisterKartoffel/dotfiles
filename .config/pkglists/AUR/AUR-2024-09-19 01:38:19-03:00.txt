@@ -6,6 +6,7 @@ hyprpicker
 oh-my-posh
 paru
 paru-debug
+pass-tomb
 snapper-gui-git
 snapper-rollback
 yay

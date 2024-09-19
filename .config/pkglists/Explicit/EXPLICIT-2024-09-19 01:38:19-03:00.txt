@@ -21,7 +21,7 @@ nano
 network-manager-applet
 nwg-look
 pacman-contrib
-pass
+pass-otp
 pavucontrol
 polkit-kde-agent
 qt5-quickcontrols2
