@@ -8,3 +8,5 @@ paru
 paru-debug
 snapper-gui-git
 snapper-rollback
+yay
+yay-debug
