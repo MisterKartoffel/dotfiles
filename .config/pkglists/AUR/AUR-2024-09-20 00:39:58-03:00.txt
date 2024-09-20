@@ -3,11 +3,10 @@ bibata-cursor-theme-bin
 catppuccin-gtk-theme-mocha
 grimblast-git
 hyprpicker
-oh-my-posh
-paru
-paru-debug
+oh-my-posh-bin
+oh-my-posh-bin-debug
+paru-bin
+paru-bin-debug
 pass-tomb
 snapper-gui-git
 snapper-rollback
-yay
-yay-debug

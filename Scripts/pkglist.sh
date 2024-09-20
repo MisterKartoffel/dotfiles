@@ -10,22 +10,42 @@ function setupListings () {
     case "$1" in
         AUR)
             pacman -Qqem > "$pkgListDir"/"$1"/"AUR-$creationTime.txt"
-            echo -e "AUR listing: $pkgListDir/$1/'AUR-$creationTime'\n"
+            if [ ! -e "$pkgListDir"/"$1"/"AUR-$creationTime.txt" ]; then
+                echo "ERROR: failed to create $pkgListDir/$1/AUR-$creationTime.txt"
+                exit 1
+            else
+                echo -e "AUR listing: $pkgListDir/$1/AUR-$creationTime.txt\n"
+            fi
             ;;
 
         Flatpak)
             flatpak list --app > "$pkgListDir"/"$1"/"FLATPAK-$creationTime.txt"
-            echo -e "Flatpak listing: $pkgListDir/$1/'FLATPAK-$creationTime.txt'\n"
+            if [ ! -e "$pkgListDir"/"$1"/"FLATPAK-$creationTime.txt" ]; then
+                echo "ERROR: failed to create $pkgListDir/$1/'FLATPAK-$creationTime.txt'"
+                exit 1
+            else
+                echo -e "Flatpak listing: $pkgListDir/$1/FLATPAK-$creationTime.txt\n"
+            fi
             ;;
 
         Optional)
             comm -13 <(pacman -Qqdt | sort) <(pacman -Qqdtt | sort) > "$pkgListDir"/"$1"/"OPTIONAL-$creationTime.txt"
-            echo -e "Optional dependency listing: $pkgListDir/$1/'OPTIONAL-$creationTime.txt'\n"
+            if [ ! -e "$pkgListDir"/"$1"/"OPTIONAL-$creationTime.txt" ]; then
+                echo "ERROR: failed to create $pkgListDir/$1/OPTIONAL-$creationTime.txt"
+                exit 1
+            else
+                echo -e "Optional dependency listing: $pkgListDir/$1/OPTIONAL-$creationTime.txt\n"
+            fi
             ;;
 
         Explicit)
             pacman -Qqten > "$pkgListDir"/"$1"/"EXPLICIT-$creationTime.txt"
-            echo -e "Explicit install listing: $pkgListDir/$1/'EXPLICIT-$creationTime'\n"
+            if [ ! -e "$pkgListDir"/"$1"/"EXPLICIT-$creationTime.txt" ]; then
+                echo "ERROR: failed to create $pkgListDir/$1/'EXPLICIT-$creationTime.txt'"
+                exit 1
+            else
+                echo -e "Explicit install listing: $pkgListDir/$1/EXPLICIT-$creationTime\n"
+            fi
             ;;
 
         *)
