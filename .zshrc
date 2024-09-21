@@ -94,9 +94,12 @@ cdf() {
         fzf --preview='eza -1la --color=always --icons=always {}' $1)
 }
 
-rmf() {
-    iterative-rm.sh $(ls |
-                    fzf -m --preview='if [[ -d {} ]]; then eza -1la --color=always --icons=always {}; else bat --color=always {}; fi' |
-                    grep -o '[^ ]*$' |
-                    xargs readlink -f)
+pqf() {
+    pacman -Qq |
+    fzf --preview 'pacman -Qil {}' --layout=reverse --bind 'enter:execute(pacman -Qil {} | less)'
+}
+
+psf() {
+    pacman -Slq |
+    fzf --preview 'pacman -Si {}' --layout=reverse --bind 'enter:execute(sudo pacman -S {})'
 }
