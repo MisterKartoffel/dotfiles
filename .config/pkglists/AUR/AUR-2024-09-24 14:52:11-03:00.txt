@@ -1,6 +1,5 @@
 aylurs-gtk-shell
 bibata-cursor-theme-bin
-btrfs-assistant
 catppuccin-gtk-theme-mocha
 grimblast-git
 hyprpicker
