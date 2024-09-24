@@ -2,6 +2,22 @@
 # ▀█▀ █▀█ █▀▄ █▀█
 # ░█░ █▄█ █▄▀ █▄█
 
+
+# Essentials
+- [ ] Move all themes to `$HOME/{.themes,.icons}`
+
+- [ ] Fix audio popping when booting up
+    - [x] Added `options snd_hda_intel power_save=0 power_save_controller=N` to `/etc/modprobe.d/snd_hda_intel.conf`
+    - [x] Added `options snd_ac97_codec power_save=0` to `/etc/modprobe.d/snd_ac97_codec.conf`
+
+# Non-essentials {{{
+- [ ] Set up Neovim to work with LaTeX files.
+
+- [ ] Fix Treesitter not working with hyprland files.
+
+- [ ] Start coding widgets in AGS.
+# }}}
+
 # Completed {{{
 ## Essentials
 - [x] Fix GRUB menu not showing {{{
@@ -37,8 +53,20 @@ Steps:
 5. Disabled zswap with kernel parameter `zswap.enabled=0` in GRUB.
 6. Rebooted.
 Notes:
-1. Check zram operating status with `zramctl`
-}}}
+1. Check zram operating status with `zramctl` }}}
+
+- [x] Migrate to rEFInd from GRUB {{{
+Steps:
+1. Installed package `refind`
+2. Ran script `refind-install --usedefault /dev/sda1 --alldrivers`
+3. Configured and confirmed working manual boot stanzas in `/boot/EFI/BOOT/refind.conf`
+4. Deleted all other entries from `efibootmgr`
+5. Deleted `/boot/EFI/grub` and `/boot/grub`
+6. Deleted `grub-overlay-btrfs` from `/etc/initcpio/hooks/` and `/etc/initcpio/install/`
+7. As per (6), removed `grub-overlay-btrfs` HOOK from `/etc/mkinitcpio.conf` and ran `mkinitcpio -P`
+8. Uninstalled `grub` and `grub-btrfs`
+9. Installed, configured `refind-btrfs` and enabled `refind-btrfs.service`
+10. Installed `Shell.efi`, `gdisk_x64.efi` and `memtest86-usb.img` to `/boot/EFI/tools` }}}
 
 ## Non-essentials
 - [x] Move local password database from Bitwarden-CLI to GNU Pass {{{
@@ -51,15 +79,4 @@ Steps:
 5.1 Moved `$HOME/.password-store` to `$HOME/.password-store.bak`
 5.2 Initialized password tomb with GPG key 0EF2E1E3DA549C4DC22134732DA35B0FC0530576 (felipesdrs@hotmail.com).
 5.3 Opened tomb with `pass open` and moved `$HOME/.password-store.bak` to `$HOME/.password-store` }}}
-# }}}
-
-# Essentials
-- [ ] Move all themes to `$HOME/{.themes,.icons}`
-
-# Non-essentials {{{
-- [ ] Set up Neovim to work with LaTeX files.
-
-- [ ] Fix Treesitter not working with hyprland files.
-
-- [ ] Start coding widgets in AGS.
 # }}}
