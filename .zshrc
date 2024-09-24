@@ -96,7 +96,7 @@ cdf() {
 
 pqf() {
     pacman -Qq |
-    fzf --preview 'pacman -Qil {}' --layout=reverse --bind 'enter:execute(pacman -Qil {} | less)'
+    fzf --preview 'pacman -Qil {}' --layout=reverse --bind 'enter:execute(sudo pacman -Rns {})'
 }
 
 psf() {
