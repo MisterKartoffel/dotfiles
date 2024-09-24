@@ -1,7 +1,7 @@
 Flatseal	com.github.tchx84.Flatseal	2.2.0	stable	system
 Vesktop	dev.vencord.Vesktop	1.5.3	stable	system
-Zen	io.github.zen_browser.zen	1.0.1-a	stable	system
+Zen	io.github.zen_browser.zen	1.0.1-a.3	stable	system
 Font Manager	org.gnome.FontManager	0.8.9	stable	system
 Prism Launcher	org.prismlauncher.PrismLauncher	8.4	stable	system
-qBittorrent	org.qbittorrent.qBittorrent	4.6.6	stable	system
-qpwgraph	org.rncbc.qpwgraph	0.7.7	stable	system
+qBittorrent	org.qbittorrent.qBittorrent	4.6.7	stable	system
+qpwgraph	org.rncbc.qpwgraph	0.7.8	stable	system

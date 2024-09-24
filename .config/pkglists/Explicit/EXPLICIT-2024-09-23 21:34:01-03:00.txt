@@ -8,10 +8,10 @@ eza
 fastfetch
 flatpak
 github-cli
-grub-btrfs
 gtk-engine-murrine
 hypridle
 hyprlock
+inotify-tools
 intel-ucode
 kitty
 lazygit
@@ -34,6 +34,7 @@ reflector
 rofi-wayland
 sassc
 sddm
+snap-pac
 swaync
 swww
 trash-cli
