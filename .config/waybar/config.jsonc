@@ -54,32 +54,32 @@
     },
 
     "custom/power": {
-        "format": "<span size='9pt'></span>",
-        "tooltip-format": "  power off",
+        "format": "<span size='13pt'></span>",
+        "tooltip-format": "power off",
         "on-click": "systemctl poweroff"
     },
 
     "custom/suspend": {
-        "format": "<span size='9pt'> 󰏦</span>",
-        "tooltip-format": "󰏦 suspend",
+        "format": "<span size='13pt'>󰏦</span>",
+        "tooltip-format": "suspend",
         "on-click": "systemctl suspend"
     }, 
 
     "custom/reboot": {
-        "format": "<span size='9pt'> 🗘 </span>",
-        "tooltip-format": "🗘 reboot",
+        "format": "🗘",
+        "tooltip-format": "reboot",
         "on-click": "systemctl reboot"
     },
 
     "custom/logout": {
-        "format": "<span size='9pt'>󰍃</span>",
-        "tooltip-format": "󰍃 logout",
+        "format": "<span size='13pt'>󰍃</span>",
+        "tooltip-format": "logout",
         "on-click": "hyprctl dispatch exit"
     },
 
     "custom/lock": {
-        "format": "<span size='9pt'> 󰷛 </span>",
-        "tooltip-format": "󰷛  lock",
+        "format": "<span size='13pt'>󰷛</span>",
+        "tooltip-format": "lock",
         "on-click": "hyprlock"
     },
 
@@ -97,16 +97,16 @@
         "format": "{icon}",
 
         "format-icons": {
-            "activated": "<span size='11pt'>󱫞</span>",
-            "deactivated": "<span size='11pt'>󰔛</span>"
+            "activated": "<span size='13pt'>󱫞</span>",
+            "deactivated": "<span size='13pt'>󰔛</span>"
         }
     },
-//󰥔
+
     "clock": {
         "interval": 1,
-        "format": "{:%T | 󰃭 %A, %d·%m·%y}",
+        "format": "{:%T | <span size='11pt'>󰃭</span> %A, %d·%m·%y}",
         "rotate": 0,
-        "tooltip-format": "<span>{calendar}</span>",
+        "tooltip-format": "{calendar}",
 
         "calendar": {
             "mode": "month",
@@ -177,7 +177,7 @@
 
     "cpu": {
         "interval": 10,
-        "format": " {usage}%",
+            "format": "<span size='11pt'></span> {usage}%",
 
         "states": {
             "low": 0,
@@ -188,7 +188,7 @@
 
     "memory": {
         "interval": 10,
-        "format": "󰾆 {percentage}%",
+        "format": "<span size='11pt'>󰾆</span> {percentage}%",
 
         "states": {
             "low": 0,
@@ -199,7 +199,7 @@
 
     "disk": {
         "interval": 10,
-        "format": " {used} / {total} ({percentage_used}%)",
+        "format": "<span size='11pt'></span> {used} ({percentage_used}%)",
 
         "states": {
             "low": 0,
@@ -223,7 +223,7 @@
 
     "backlight": {
         "device": "intel_backlight",
-        "format": "{icon} {percent}%",
+        "format": "<span size='10pt'>{icon}</span> {percent}%",
         "format-icons": ["", "", "", "", "", "", "", "", ""],
         "on-scroll-up": "brightnessctl set 1%+",
         "on-scroll-down": "brightnessctl set 1%-",
@@ -232,14 +232,14 @@
 
     "network": {
         "tooltip": true,
-        "format-wifi": " ",
+        "format-wifi": "<span size='11pt'></span>",
         "rotate": 0,
-        "format-ethernet": "󰈀 ",
+        "format-ethernet": "<span size='10pt'>󰈀</span>",
         "tooltip-format": "Network: <big><b>{essid}</b></big>\nSignal strength: <b>{signaldBm}dBm ({signalStrength}%)</b>\nFrequency: <b>{frequency}MHz</b>\nInterface: <b>{ifname}</b>\nIP: <b>{ipaddr}/{cidr}</b>\nGateway: <b>{gwaddr}</b>\nNetmask: <b>{netmask}</b>",
         "format-linked": "󰈀 {ifname} (No IP)",
         "format-disconnected": "󰖪 ",
         "tooltip-format-disconnected": "Disconnected",
-        "format-alt": "<span foreground='#99ffdd'> {bandwidthDownBytes}</span> <span foreground='#ffcc66'> {bandwidthUpBytes}</span>",
+        "format-alt": "<span foreground='#99ffdd'><span size='13pt'></span> {bandwidthDownBytes}</span> <span foreground='#ffcc66'><span size='13pt'></span> {bandwidthUpBytes}</span>",
         "interval": 2
     },
 
@@ -257,14 +257,14 @@
 
         "format-icons": {
             "headphones": "",
-            "default": [" ", " ", " "]
+            "default": ["󰕿", "<span size='10pt'>󰖀</span>", "<span size='10pt'>󰕾</span>"]
         }
     },
 
     "pulseaudio#microphone": {
         "format": "{format_source}",
-        "format-source": " {volume}%",
-        "format-source-muted": "  off",
+        "format-source": "<span size='9pt'>󰍬</span> {volume}%",
+        "format-source-muted": "<span size='10pt'>󰍭</span> off",
         "on-click": "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle",
         "on-click-right": "pavucontrol -t 4",
         "on-scroll-up": "pactl set-source-volume @DEFAULT_SOURCE@ +5%",
@@ -274,17 +274,17 @@
 
     "custom/notification": {
         "tooltip": false,
-        "format": "{icon} {}",
+        "format": "{icon}",
 
         "format-icons": {
-            "notification": "<span foreground='red'><sup></sup></span>",
-            "none": "",
-            "dnd-notification": "<span foreground='red'><sup></sup></span>",
-            "dnd-none": "",
-            "inhibited-notification": "<span foreground='red'><sup></sup></span>",
-            "inhibited-none": "",
-            "dnd-inhibited-notification": "<span foreground='red'><sup></sup></span>",
-            "dnd-inhibited-none": ""
+            "notification": "󱅫<span foreground='red'><sup></sup></span>",
+            "none": "󰂚",
+            "dnd-notification": "󰂛<span foreground='red'><sup></sup></span>",
+            "dnd-none": "󰂛",
+            "inhibited-notification": "󰂚<span foreground='red'><sup></sup></span>",
+            "inhibited-none": "󰂚",
+            "dnd-inhibited-notification": "󱏧<span foreground='red'><sup></sup></span>",
+            "dnd-inhibited-none": "󱏧"
         },
 
         "return-type": "json",
