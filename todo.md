@@ -66,7 +66,8 @@ Steps:
 7. As per (6), removed `grub-overlay-btrfs` HOOK from `/etc/mkinitcpio.conf` and ran `mkinitcpio -P`
 8. Uninstalled `grub` and `grub-btrfs`
 9. Installed, configured `refind-btrfs` and enabled `refind-btrfs.service`
-10. Installed `Shell.efi`, `gdisk_x64.efi` and `memtest86-usb.img` to `/boot/EFI/tools` }}}
+10. Installed `Shell.efi`, `gdisk_x64.efi` and `memtest86-usb.img` to `/boot/EFI/tools`
+11. Added upgrade pacman hook at `/etc/pacman.d/hooks/99-refind.hook` }}}
 
 ## Non-essentials
 - [x] Move local password database from Bitwarden-CLI to GNU Pass {{{
