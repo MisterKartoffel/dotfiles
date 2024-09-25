@@ -6,10 +6,6 @@
 # Essentials
 - [ ] Move all themes to `$HOME/{.themes,.icons}`
 
-- [ ] Fix audio popping when booting up
-    - [x] Added `options snd_hda_intel power_save=0 power_save_controller=N` to `/etc/modprobe.d/snd_hda_intel.conf`
-    - [x] Added `options snd_ac97_codec power_save=0` to `/etc/modprobe.d/snd_ac97_codec.conf`
-
 # Non-essentials {{{
 - [ ] Set up Neovim to work with LaTeX files.
 
@@ -84,6 +80,12 @@ Steps:
 11. Created `/swap/swapfile` with `sudo btrfs filesystem mkswapfile --size 8g --uuid clear /swap/swapfile`
 12. Disabled zram by undoing zram steps 1..5.
 13. Edited `/etc/fstab` by appending `/swap/swapfile none swap defaults 0 0` }}}
+
+- [x] Fix audio popping when booting up {{{
+Steps:
+1. Added `options snd_hda_intel power_save=0 power_save_controller=N` to `/etc/modprobe.d/snd_hda_intel.conf`
+2. Added `options snd_ac97_codec power_save=0` to `/etc/modprobe.d/snd_ac97_codec.conf`
+3. Added `/etc/wireplumber/wireplumber.conf.d/51-disable-suspension.conf` }}}
 
 ## Non-essentials
 - [x] Move local password database from Bitwarden-CLI to GNU Pass {{{
