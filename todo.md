@@ -75,10 +75,10 @@ Steps:
 2. Mounted BTRFS `FS_TREE` with `mount /dev/sda2 /mnt -o subvolid=5`
 3. Created subvolumes `@var` and `@swap`
 4. Moved old `/var` contents with `cp -r --archive --reflink=always /mnt/@/var/* /mnt/@var`
-5. Recreated broken symlinks `@var/run` and `@var/lock` with `ln -s /mnt/@/run /mnt/@var/run` and `ln -s /mnt/@var/run /mnt/@var/lock`
-6. Mounted `@var` and `@swap` to `/mnt/var` and `/mnt/swap`, respectively.
-7. Regenerated `/etc/fstab` with `genfstab -U /mnt > /mnt/etc/fstab`
-8. Rebooted into system.
+5. Mounted `@var` and `@swap` to `/mnt/var` and `/mnt/swap`, respectively.
+6. Regenerated `/etc/fstab` with `genfstab -U /mnt > /mnt/etc/fstab`
+7. Rebooted into system.
+8. Recreated broken symlinks `@var/run` and `@var/lock` with `ln -s /run /var/run` and `ln -s /var/run /var/lock`
 9. Deleted all previous snapshots in `/.snapshots`
 10. Regenerated rEFInd's snapshot stanzas.
 11. Created `/swap/swapfile` with `sudo btrfs filesystem mkswapfile --size 8g --uuid clear /swap/swapfile`
