@@ -8,10 +8,9 @@
 
 # Non-essentials {{{
 - [ ] Set up Neovim to work with LaTeX files.
-
 - [ ] Fix Treesitter not working with hyprland files.
-
 - [ ] Start coding widgets in AGS.
+- [ ] Look into if Syncthing is a good addition.
 # }}}
 
 # Completed {{{
@@ -98,4 +97,9 @@ Steps:
 5.1 Moved `$HOME/.password-store` to `$HOME/.password-store.bak`
 5.2 Initialized password tomb with GPG key 0EF2E1E3DA549C4DC22134732DA35B0FC0530576 (felipesdrs@hotmail.com).
 5.3 Opened tomb with `pass open` and moved `$HOME/.password-store.bak` to `$HOME/.password-store` }}}
+
+- [x] Disabled watchdogs {{{
+Steps:
+1. Added `nowatchdog` to kernel parameters.
+2. Added `blacklist iTCO_wdt` to `/etc/modprobe.d/disable-iTCO_wdt.conf` }}}
 # }}}
