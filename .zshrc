@@ -81,6 +81,7 @@ alias fetch="fastfetch --gpu-hide-type integrated"
 alias config="/usr/bin/git --git-dir=$HOME/Dotfiles/ --work-tree=$HOME"
 alias lazyconfig="lazygit --git-dir=$HOME/Dotfiles/ --work-tree=$HOME"
 alias ll="eza -1la --color=always --icons=always"
+alias trash="gio trash"
 alias c="clear"
 alias q="exit"
 
