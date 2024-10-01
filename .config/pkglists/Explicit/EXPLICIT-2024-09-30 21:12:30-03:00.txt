@@ -38,7 +38,7 @@ smartmontools
 snap-pac
 swaync
 swww
-trash-cli
+tldr
 ttf-cascadia-code-nerd
 ttf-cascadia-mono-nerd
 ttf-font-awesome
