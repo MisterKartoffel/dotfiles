@@ -23,6 +23,7 @@ nwg-look
 pacman-contrib
 pass-otp
 pavucontrol
+pkgstats
 polkit-kde-agent
 qt5-quickcontrols2
 qt5ct
