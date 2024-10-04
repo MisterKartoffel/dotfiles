@@ -53,7 +53,6 @@ setopt globdots
 eval "$(fzf --zsh)"
 eval "$(zoxide init --cmd cd zsh)"
 source ~/.zsh/catppuccin_mocha-zsh-syntax-highlighting.zsh
-export PATH="$HOME/Scripts:$PATH"
 export LS_COLORS="$(vivid generate catppuccin-mocha)"
 export FZF_DEFAULT_OPTS=" \
     --color=bg+:#313244,bg:#1e1e2e,spinner:#f5e0dc,hl:#f38ba8 \
@@ -63,6 +62,8 @@ export FZF_DEFAULT_OPTS=" \
     --multi"
 
 # Environments
+export PATH="$PATH:$HOME/Scripts:$HOME/.spicetify/"
+export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 export EDITOR=nvim
 export VISUAL=nvim
 
