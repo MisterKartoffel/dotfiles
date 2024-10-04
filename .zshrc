@@ -62,7 +62,7 @@ export FZF_DEFAULT_OPTS=" \
     --multi"
 
 # Environments
-export PATH="$PATH:$HOME/Scripts:$HOME/.spicetify/"
+export PATH="$PATH:$HOME/.local/bin:$HOME/.spicetify/"
 export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 export EDITOR=nvim
 export VISUAL=nvim
