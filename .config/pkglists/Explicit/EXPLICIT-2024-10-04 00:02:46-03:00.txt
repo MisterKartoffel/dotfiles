@@ -18,10 +18,10 @@ lazygit
 linux-lts
 linux-lts-headers
 nano
+neovim
 network-manager-applet
 nwg-look
 pacman-contrib
-pass-otp
 pavucontrol
 pkgstats
 polkit-kde-agent

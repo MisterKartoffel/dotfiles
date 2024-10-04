@@ -5,6 +5,5 @@ grimblast-git
 oh-my-posh-bin
 paru-bin
 paru-bin-debug
-pass-tomb
 refind-btrfs
 snapper-rollback
