@@ -27,7 +27,7 @@
         },
         "cpu",
         "gpu",
-        "disk",
+        "btrfs",
         "memory",
         {
             "type": "custom", // SoftwareStart
@@ -36,10 +36,9 @@
         "os",
         "kernel",
         "lm",
-        "de",
         "wm",
-        "shell",
         "terminal",
+        "shell",
         "packages",
         "uptime",
         {
