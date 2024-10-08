@@ -1,8 +1,8 @@
 Portal for Teams	com.github.IsmaelMartinez.teams_for_linux	1.11.0	stable	system
-Flatseal	com.github.tchx84.Flatseal	2.2.0	stable	system
+Flatseal	com.github.tchx84.Flatseal	2.3.0	stable	system
 Spotify	com.spotify.Client	1.2.45.454.gc16ec9f6	stable	system
 Vesktop	dev.vencord.Vesktop	1.5.3	stable	system
-Zen	io.github.zen_browser.zen	1.0.1-a.6	stable	system
+Zen	io.github.zen_browser.zen	1.0.1-a.7	stable	system
 Font Manager	org.gnome.FontManager	0.8.9	stable	system
 KeePassXC	org.keepassxc.KeePassXC	2.7.9	stable	system
 Prism Launcher	org.prismlauncher.PrismLauncher	8.4	stable	system

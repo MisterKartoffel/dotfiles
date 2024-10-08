@@ -4,6 +4,5 @@ catppuccin-gtk-theme-mocha
 grimblast-git
 oh-my-posh-bin
 paru-bin
-paru-bin-debug
 refind-btrfs
 snapper-rollback
