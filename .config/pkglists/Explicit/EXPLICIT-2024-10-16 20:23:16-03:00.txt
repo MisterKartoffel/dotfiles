@@ -28,8 +28,6 @@ polkit-kde-agent
 qt5-quickcontrols2
 qt5ct
 qt6-5compat
-qt6-charts
-qt6-virtualkeyboard
 qt6ct
 reflector
 rofi-wayland
