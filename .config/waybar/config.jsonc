@@ -2,7 +2,10 @@
     "layer": "top",
     "position": "top",
     "mode": "dock",
+
+    "margin": "1 0",
     "height": 35,
+
     "reload_style_on_change": true,
     "exclusive": true,
     "passthrough": false,
@@ -158,7 +161,6 @@
     },
 
     "hyprland/window": {
-        "format": "{}",
         "icon": true,
         "icon-size": 20,
         "tooltip": 0
@@ -177,7 +179,8 @@
 
     "cpu": {
         "interval": 10,
-            "format": "<span size='11pt'></span> {usage}%",
+        "format": "<span size='11pt'></span> {usage}%",
+        "on-click": "kitty --hold btop",
 
         "states": {
             "low": 0,
@@ -189,6 +192,7 @@
     "memory": {
         "interval": 10,
         "format": "<span size='11pt'>󰾆</span> {percentage}%",
+        "on-click": "kitty --hold btop",
 
         "states": {
             "low": 0,
@@ -200,6 +204,7 @@
     "disk": {
         "interval": 10,
         "format": "<span size='11pt'></span> {used} ({percentage_used}%)",
+        "on-click": "org.gnome.baobab",
 
         "states": {
             "low": 0,
@@ -224,6 +229,7 @@
     "backlight": {
         "device": "intel_backlight",
         "format": "<span size='10pt'>{icon}</span> {percent}%",
+        "tooltip": 0,
         "format-icons": ["", "", "", "", "", "", "", "", ""],
         "on-scroll-up": "brightnessctl set 1%+",
         "on-scroll-down": "brightnessctl set 1%-",
@@ -246,11 +252,12 @@
     "wireplumber": {
         "format": "{icon} {volume}%",
         "format-muted": "  off",
+        "tooltip": 0,
         "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
         "on-click-right": "pavucontrol -t 3",
 
         "states": {
-            "high": 75
+            "high": 51
         },
 
         "scroll-step": 5,
@@ -269,7 +276,7 @@
         "on-click-right": "pavucontrol -t 4",
         "on-scroll-up": "pactl set-source-volume @DEFAULT_SOURCE@ +5%",
         "on-scroll-down": "pactl set-source-volume @DEFAULT_SOURCE@ -5%",
-        "tooltip-format": "{format_source} {source_desc}"
+        "tooltip": 0
     },
 
     "custom/notification": {

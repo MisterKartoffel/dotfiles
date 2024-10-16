@@ -14,23 +14,21 @@ tooltip {
     background: @base;
     margin: 10px;
     border: 1px solid @overlay2;
-    border-radius: 7px;
+    border-radius: 10px;
     border-width: 1px;
 }
 
 #workspaces button {
     color: @text;
-    padding: 0px 3px;
-    margin: 3px 0px;
-    border-radius: 21px;
+    padding: 0px 5px;
+    margin: 5px 1px;
+    border-radius: 5px;
     animation: ws_normal 20s ease-in-out 1;
 }
 
 #workspaces button.active {
     color: @base;
     background: @sky;
-    padding: 0px 12px;
-    margin: 3px;
     animation: ws_active 20s ease-in-out 1;
     transition: all 0.4s cubic-bezier(.55,-0.68,.48,1.682);
 }
@@ -67,12 +65,10 @@ tooltip {
 #window,
 #cpu, #memory, #disk,
 #backlight, #network, #wireplumber, #pulseaudio, #custom-notification,
-#custom-r_end,
-#custom-l_end {
+#custom-r_end, #custom-l_end {
     color: @text;
     background: @base;
-    opacity: 1;
-    margin: 5px 0px;
+    margin: 2px 0px;
     padding: 0px 4px;
     border-top: 1px solid @overlay2;
     border-bottom: 1px solid @overlay2;
@@ -80,12 +76,12 @@ tooltip {
 
 #custom-r_end {
     margin-right: 9px;
-    padding-right: 3px;
-    border-radius: 0px 21px 21px 0px;
+    padding: 0px 0px 0px 3px;
+    border-radius: 0px 10px 10px 0px;
 }
 
 #custom-l_end {
     margin-left: 9px;
-    padding-left: 3px;
-    border-radius: 21px 0px 0px 21px;
+    padding: 0px 3px 0px 0px;
+    border-radius: 10px 0px 0px 10px;
 }
