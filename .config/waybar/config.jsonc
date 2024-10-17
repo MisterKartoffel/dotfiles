@@ -75,7 +75,7 @@
     },
 
     "custom/logout": {
-        "format": "<span size='13pt'>󰍃</span>",
+        "format": "<span size='11pt'>󰍃</span>",
         "tooltip-format": "logout",
         "on-click": "hyprctl dispatch exit"
     },
