@@ -88,21 +88,20 @@ alias c="clear"
 alias q="exit"
 
 # Helper functions
-nf() {
+nf() { # Neovim Find
     fzf -m --preview='bat --color=always {}' --bind='enter:become($EDITOR {+})'
 }
 
-cdf() {
-    cd $(fd -Ht d . |
-        fzf --preview='eza -1la --color=always --icons=always {}' $1)
-}
-
-pqf() {
+pqf() { # Pacman Query Find
     pacman -Qq |
     fzf --preview 'pacman -Qil {}' --layout=reverse --bind 'enter:execute(sudo pacman -Rns {})'
 }
 
-psf() {
+psf() { # Pacman Sync Find
     pacman -Slq |
     fzf --preview 'pacman -Si {}' --layout=reverse --bind 'enter:execute(sudo pacman -S {})'
+}
+
+pacman-stray() {
+    sudo export LC_ALL=C.UTF-8; comm -13 <(pacman -Qlq | sed 's,/$,,' | sort) <(find /etc /usr /opt -path /usr/lib/modules -prune -o -print | sort)
 }
