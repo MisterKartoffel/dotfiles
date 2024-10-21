@@ -1,0 +1,12 @@
+cmake
+fd
+ffmpegthumbnailer
+fzf
+glib2-devel
+imagemagick
+libnotify
+meson
+p7zip
+poppler
+ripgrep
+zoxide
