@@ -1,7 +1,6 @@
 cmake
 fd
 ffmpegthumbnailer
-fzf
 glib2-devel
 imagemagick
 libnotify
