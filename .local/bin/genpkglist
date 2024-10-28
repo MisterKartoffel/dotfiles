@@ -44,7 +44,7 @@ function setupListings () {
                 echo "ERROR: failed to create $pkgListDir/$1/'EXPLICIT-$creationTime.txt'"
                 exit 1
             else
-                echo -e "Explicit install listing: $pkgListDir/$1/EXPLICIT-$creationTime\n"
+                echo -e "Explicit install listing: $pkgListDir/$1/EXPLICIT-$creationTime.txt\n"
             fi
             ;;
 
