@@ -4,10 +4,10 @@ OBS Studio	com.obsproject.Studio	30.2.3	stable	system
 Spotify	com.spotify.Client	1.2.45.454.gc16ec9f6	stable	system
 Vesktop	dev.vencord.Vesktop	1.5.3	stable	system
 Ente Auth	io.ente.auth	4.0.3	stable	system
-Zen	io.github.zen_browser.zen	1.0.1-a.12	stable	system
+Zen	io.github.zen_browser.zen	1.0.1-a.14	stable	system
 Font Manager	org.gnome.FontManager	0.8.9	stable	system
 Disk Usage Analyzer	org.gnome.baobab	47.0	stable	system
 KeePassXC	org.keepassxc.KeePassXC	2.7.9	stable	system
-Prism Launcher	org.prismlauncher.PrismLauncher	9.0	stable	system
+Prism Launcher	org.prismlauncher.PrismLauncher	9.1	stable	system
 qBittorrent	org.qbittorrent.qBittorrent	5.0.0	stable	system
 qpwgraph	org.rncbc.qpwgraph	0.7.8	stable	system
