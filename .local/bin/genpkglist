@@ -56,24 +56,23 @@ function setupListings () {
 }
 
 function setupDirectories () {
+    if [ -e "$pkgListDir" ]; then
+        rm -rf "$pkgListDir"
+        echo -e "Cleared previous package lists under $pkgListDir\n"
+    fi
+
+    if [ -f "$pkgListDir" ]; then
+        echo "Error: $pkgListDir exists as a file."
+        exit 1
+    else
+        mkdir "$pkgListDir"
+        echo -e "New package listing master directory: $pkgListDir\n"
+    fi
+
     for source in "$@";
     do
-        if [ -f "$pkgListDir" ]; then
-            echo "Error: $pkgListDir exists as a file."
-            exit 1
-        elif [ ! -e "$pkgListDir" ]; then
-            mkdir "$pkgListDir"
-            echo -e "New package listing master directory: $pkgListDir\n"
-        fi
-
-        if [ -f "$pkgListDir"/"$source" ]; then
-            echo "Error: $pkgListDir/$source exists as a file."
-            exit 1
-        elif [ ! -e "$pkgListDir"/"$source" ]; then
-            mkdir -p "$pkgListDir"/"$source"
-            echo "New $source listing directory: $pkgListDir/$source"
-        fi
-
+        mkdir "$pkgListDir"/"$source"
+        echo "New $source listing directory: $pkgListDir/$source"
         setupListings "$source"
     done
 }
