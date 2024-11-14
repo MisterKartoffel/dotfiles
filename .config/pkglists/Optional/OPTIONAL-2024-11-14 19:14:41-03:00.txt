@@ -7,5 +7,6 @@ libnotify
 meson
 p7zip
 poppler
+python-setuptools
 ripgrep
 zoxide
