@@ -1,4 +1,3 @@
-aylurs-gtk-shell
 bibata-cursor-theme-bin
 catppuccin-gtk-theme-mocha
 downgrade

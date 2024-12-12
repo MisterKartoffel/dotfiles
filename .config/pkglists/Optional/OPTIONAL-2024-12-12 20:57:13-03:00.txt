@@ -1,12 +1,14 @@
+chafa
 cmake
 fd
 ffmpegthumbnailer
+geoclue
 glib2-devel
 imagemagick
 libnotify
 meson
+openexr
 p7zip
 poppler
-python-setuptools
 ripgrep
 zoxide
