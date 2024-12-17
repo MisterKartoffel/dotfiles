@@ -108,7 +108,6 @@
     "clock": {
         "interval": 1,
         "format": "{:%T | <span size='11pt'>󰃭</span> %A, %d·%m·%y}",
-        "rotate": 0,
         "tooltip-format": "{calendar}",
 
         "calendar": {
@@ -163,7 +162,7 @@
     "hyprland/window": {
         "icon": true,
         "icon-size": 20,
-        "tooltip": 0
+        "tooltip": false
     },
 
     /* HARDWARE TRAY */
@@ -229,7 +228,7 @@
     "backlight": {
         "device": "intel_backlight",
         "format": "<span size='10pt'>{icon}</span> {percent}%",
-        "tooltip": 0,
+        "tooltip": false,
         "format-icons": ["", "", "", "", "", "", "", "", ""],
         "on-scroll-up": "brightnessctl set 1%+",
         "on-scroll-down": "brightnessctl set 1%-",
@@ -237,6 +236,7 @@
     },
 
     "network": {
+        "interval": 2,
         "tooltip": true,
         "format-wifi": "<span size='11pt'></span>",
         "rotate": 0,
@@ -246,13 +246,13 @@
         "format-disconnected": "󰖪 ",
         "tooltip-format-disconnected": "Disconnected",
         "format-alt": "<span foreground='#99ffdd'><span size='13pt'></span> {bandwidthDownBytes}</span> <span foreground='#ffcc66'><span size='13pt'></span> {bandwidthUpBytes}</span>",
-        "interval": 2
+        "on-click-right": "nm-connection-editor"
     },
 
     "wireplumber": {
         "format": "{icon} {volume}%",
         "format-muted": "  off",
-        "tooltip": 0,
+        "tooltip": false,
         "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
         "on-click-right": "pavucontrol -t 3",
 
@@ -272,11 +272,11 @@
         "format": "{format_source}",
         "format-source": "<span size='9pt'>󰍬</span> {volume}%",
         "format-source-muted": "<span size='10pt'>󰍭</span> off",
+        "tooltip": false,
         "on-click": "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle",
         "on-click-right": "pavucontrol -t 4",
         "on-scroll-up": "pactl set-source-volume @DEFAULT_SOURCE@ +5%",
-        "on-scroll-down": "pactl set-source-volume @DEFAULT_SOURCE@ -5%",
-        "tooltip": 0
+        "on-scroll-down": "pactl set-source-volume @DEFAULT_SOURCE@ -5%"
     },
 
     "custom/notification": {
