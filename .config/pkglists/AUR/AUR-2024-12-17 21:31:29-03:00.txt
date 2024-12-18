@@ -1,7 +1,6 @@
 bibata-cursor-theme-bin
 catppuccin-gtk-theme-mocha
 downgrade
-grimblast-git
 oh-my-posh-bin
 paru-bin
 refind-btrfs
