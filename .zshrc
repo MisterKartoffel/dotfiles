@@ -11,7 +11,7 @@ fi
 source "${ZINIT_HOME}/zinit.zsh"
 
 # Initialize oh-my-posh prompt
-eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/config.toml)"
+eval "$(oh-my-posh init zsh --config $HOME/.local/share/themes/zsh/ohmyposh/config.toml)"
 
 # Load completions
 autoload -Uz compinit && compinit
@@ -53,7 +53,7 @@ setopt correct_all
 # Shell integrations
 eval "$(fzf --zsh)"
 eval "$(zoxide init --cmd cd zsh)"
-source ~/.zsh/catppuccin_mocha-zsh-syntax-highlighting.zsh
+source ~/.local/share/themes/zsh/catppuccin_mocha-zsh-syntax-highlighting.zsh
 export LS_COLORS="$(vivid generate catppuccin-mocha)"
 export FZF_DEFAULT_OPTS=" \
     --color=bg+:#313244,bg:#1e1e2e,spinner:#f5e0dc,hl:#f38ba8 \
@@ -63,7 +63,7 @@ export FZF_DEFAULT_OPTS=" \
     --multi"
 
 # Environments
-export PATH="$PATH:$HOME/.local/bin:$HOME/.spicetify/"
+export PATH="$PATH:$HOME/.local/bin"
 export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 export EDITOR=nvim
 export VISUAL=nvim

@@ -4,7 +4,6 @@
 
 
 # Essentials
-- [ ] Move all themes to `$HOME/{.themes,.icons}`
 
 # Non-essentials {{{
 - [ ] Set up Neovim to work with LaTeX files.
@@ -85,6 +84,12 @@ Steps:
 1. Added `options snd_hda_intel power_save=0 power_save_controller=N` to `/etc/modprobe.d/snd_hda_intel.conf`
 2. Added `options snd_ac97_codec power_save=0` to `/etc/modprobe.d/snd_ac97_codec.conf`
 3. Added `/etc/wireplumber/wireplumber.conf.d/51-disable-suspension.conf` }}}
+
+- [x] Move all theme-related files to `$HOME/.local/share/themes` {{{
+Steps:
+1. Deleted unnecessary externally installed theme files.
+2. Moved and reconfigured all theme engines (QT5 and QT6 through Kvantum, GTK through nwg-look).
+3. Kept GTK theme under `$HOME/.themes` for Flatpak compatibility. }}}
 
 ## Non-essentials
 - [x] Move local password database from Bitwarden-CLI to GNU Pass {{{

@@ -5,7 +5,7 @@
     min-height: 10px;
 }
 
-@import "mocha.css";
+@import "Catppuccin-Mocha.css";
 
 window#waybar { background: transparent; }
 
