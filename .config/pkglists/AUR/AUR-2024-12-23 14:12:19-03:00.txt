@@ -1,8 +1,8 @@
 bibata-cursor-theme-bin
 catppuccin-gtk-theme-mocha
 downgrade
+ncspot-bin
 oh-my-posh-bin
 paru-bin
 refind-btrfs
 snapper-rollback
-spicetify-cli

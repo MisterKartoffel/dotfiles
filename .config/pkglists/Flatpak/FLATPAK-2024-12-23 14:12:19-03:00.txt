@@ -1,13 +1,13 @@
-Portal for Teams	com.github.IsmaelMartinez.teams_for_linux	1.12.3	stable	system
+Portal for Teams	com.github.IsmaelMartinez.teams_for_linux	1.12.5	stable	system
 Flatseal	com.github.tchx84.Flatseal	2.3.0	stable	system
 OBS Studio	com.obsproject.Studio	30.2.3	stable	system
-Spotify	com.spotify.Client	1.2.50.335.g5e2860a8	stable	system
 Vesktop	dev.vencord.Vesktop	1.5.3	stable	system
 Ente Auth	io.ente.auth	4.0.3	stable	system
-Zen	io.github.zen_browser.zen	1.0.2-b.2	stable	system
+Celluloid	io.github.celluloid_player.Celluloid	0.27	stable	system
+Zen	io.github.zen_browser.zen	1.0.2-b.3	stable	system
 Font Manager	org.gnome.FontManager	0.8.9	stable	system
 Disk Usage Analyzer	org.gnome.baobab	47.0	stable	system
 KeePassXC	org.keepassxc.KeePassXC	2.7.9	stable	system
 Prism Launcher	org.prismlauncher.PrismLauncher	9.1	stable	system
-qBittorrent	org.qbittorrent.qBittorrent	5.0.2	stable	system
+qBittorrent	org.qbittorrent.qBittorrent	5.0.3	stable	system
 qpwgraph	org.rncbc.qpwgraph	0.8.0	stable	system

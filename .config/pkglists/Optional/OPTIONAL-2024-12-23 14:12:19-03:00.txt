@@ -1,7 +1,7 @@
+7zip
 chafa
 cmake
 fd
-ffmpegthumbnailer
 geoclue
 glib2-devel
 imagemagick
@@ -9,7 +9,6 @@ jq
 libnotify
 meson
 openexr
-p7zip
 poppler
 ripgrep
 zoxide
