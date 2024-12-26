@@ -88,20 +88,29 @@ alias c="clear"
 alias q="exit"
 
 # Helper functions
-nf() { # Neovim Find
+function nf() { # Neovim Find
     fzf -m --preview='bat --color=always {}' --bind='enter:become($EDITOR {+})'
 }
 
-pqf() { # Pacman Query Find
+function pqf() { # Pacman Query Find
     pacman -Qq |
     fzf --preview 'pacman -Qil {}' --layout=reverse --bind 'enter:execute(sudo pacman -Rns {})'
 }
 
-psf() { # Pacman Sync Find
+function psf() { # Pacman Sync Find
     pacman -Slq |
     fzf --preview 'pacman -Si {}' --layout=reverse --bind 'enter:execute(sudo pacman -S {})'
 }
 
-pacman-stray() {
+function pacman-stray() {
     sudo export LC_ALL=C.UTF-8; comm -13 <(pacman -Qlq | sed 's,/$,,' | sort) <(find /etc /usr /opt -path /usr/lib/modules -prune -o -print | sort)
+}
+
+function y() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+	yazi "$@" --cwd-file="$tmp"
+	if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+		builtin cd -- "$cwd"
+	fi
+	rm -f -- "$tmp"
 }
