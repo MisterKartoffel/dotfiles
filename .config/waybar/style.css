@@ -60,7 +60,7 @@ tooltip {
 #pulseaudio.source-muted { color: @red; }
 
 #custom-power, #custom-reboot, #custom-suspend, #custom-logout, #custom-lock,
-#idle_inhibitor, #clock,
+#idle_inhibitor, #clock, #custom-weather,
 #workspaces, #tray,
 #window,
 #cpu, #memory, #disk,

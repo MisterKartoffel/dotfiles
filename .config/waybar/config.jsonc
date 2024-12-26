@@ -92,7 +92,8 @@
 
         "modules": [
             "idle_inhibitor",
-            "clock"
+            "clock",
+            "custom/weather"
         ]
     },
 
@@ -130,6 +131,15 @@
             "on-scroll-up": "shift_up",
             "on-scroll-down": "shift_down"
         }
+    },
+
+    "custom/weather": {
+        "exec": "get-weather Porto-Alegre",
+        "return-type": "json",
+        "interval": 1800,
+        "format": "{}",
+        "on-click": "kitty --hold curl wttr.in/Porto-Alegre",
+        "tooltip": true
     },
 
     /* WORKSPACES TRAY */
@@ -179,7 +189,7 @@
     "cpu": {
         "interval": 10,
         "format": "<span size='11pt'></span> {usage}%",
-        "on-click": "kitty --hold btop",
+        "on-click": "kitty btop",
 
         "states": {
             "low": 0,
@@ -191,7 +201,7 @@
     "memory": {
         "interval": 10,
         "format": "<span size='11pt'>󰾆</span> {percentage}%",
-        "on-click": "kitty --hold btop",
+        "on-click": "kitty btop",
 
         "states": {
             "low": 0,
