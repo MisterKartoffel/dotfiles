@@ -32,9 +32,9 @@ keymap = [
 { on = "l",     	run = "enter",	desc = "Enter the child directory" },
 
 # Selection
-{ on = "<Space>",   run = [ "select --state=none", "arrow 1" ], desc = "Toggle the current selection state" },
-{ on = "<C-a>",		run = "select_all --state=true",            desc = "Select all files" },
-{ on = "<C-r>",		run = "select_all --state=none",            desc = "Inverse selection of all files" },
+{ on = "<Space>",   run = [ "toggle", "arrow 1" ],  desc = "Toggle the current selection state" },
+{ on = "<C-a>",		run = "toggle_all --state=on",  desc = "Select all files" },
+{ on = "<C-r>",		run = "escape --select",        desc = "Remove selection of all files" },
 
 # Operation
 { on = "<Enter>",	run = "open",	            			desc = "Open selected files" },
