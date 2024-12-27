@@ -67,6 +67,8 @@ export PATH="$PATH:$HOME/.local/bin"
 export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 export EDITOR=nvim
 export VISUAL=nvim
+export MANPAGER='nvim +Man!'
+export BROWSER=io.github.zen_browser.zen
 
 # Completion styling
 zstyle ":completion:*" matcher-list "m:{a-z}={A-Za-z}"
