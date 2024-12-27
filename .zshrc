@@ -22,18 +22,10 @@ zinit light Aloxaf/fzf-tab
 zinit light zsh-users/zsh-syntax-highlighting
 zinit light zsh-users/zsh-completions
 zinit light zsh-users/zsh-autosuggestions
+zinit light softmoth/zsh-vim-mode
 
 # Keybindings
-bindkey "^[[A" history-search-backward
-bindkey "^[[B" history-search-forward
-bindkey "^[[3~" delete-char
-bindkey "^[[3;5~" backward-kill-word
-bindkey "^[[1;5D" backward-word
-bindkey "^[[5~" backward-word
-bindkey "^[[1;5C" forward-word
-bindkey "^[[6~" forward-word
-bindkey "^[[H" beginning-of-line
-bindkey "^[[F" end-of-line
+bindkey -v
 
 # History
 HISTSIZE=1000
