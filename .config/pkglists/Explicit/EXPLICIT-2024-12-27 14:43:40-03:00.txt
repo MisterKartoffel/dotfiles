@@ -6,6 +6,7 @@ btop
 eza
 fastfetch
 flatpak
+ghostty
 github-cli
 gtk-engine-murrine
 hypridle
@@ -14,10 +15,10 @@ hyprlock
 hyprpicker
 inotify-tools
 intel-ucode
-kitty
 lazygit
 linux-lts
 linux-lts-headers
+man-db
 mpv
 nano
 neovim

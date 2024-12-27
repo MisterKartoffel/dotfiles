@@ -1,0 +1,18 @@
+font-family = CaskaydiaCove Nerd Font Mono
+font-family-bold = CaskaydiaCove Nerd Font Mono Bold
+font-family-italic = CaskaydiaCove Nerd Font Mono Italic
+font-family-bold-italic = CaskaydiaCove Nerd Font Mono Bold Italic
+
+font-size = 13
+
+theme = catppuccin-mocha
+
+window-padding-x = 5
+window-decoration = false
+
+clipboard-trim-trailing-spaces = true
+clipboard-paste-protection = true
+
+shell-integration = zsh
+
+config-file = ?keybindings

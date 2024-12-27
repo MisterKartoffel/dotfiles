@@ -1,0 +1,53 @@
+# Font keybinds {{{
+
+# Manipulate font size
+keybind = ctrl+plus=increase_font_size:1
+keybind = ctrl+minus=decrease_font_size:1
+keybind = ctrl+zero=reset_font_size
+
+# }}}
+
+# Surface keybinds {{{
+
+# Close current split -> tab -> window
+keybind = ctrl+shift+w=close_surface
+
+# Split keybinds {{{
+
+# Create new split on the selected side of current split
+keybind = ctrl+shift+v=new_split:down
+keybind = ctrl+shift+s=new_split:right
+
+# Resize split
+keybind = alt+shift+h=resize_split:left,20
+keybind = alt+shift+j=resize_split:down,20
+keybind = alt+shift+k=resize_split:up,20
+keybind = alt+shift+l=resize_split:right,20
+keybind = alt+shift+zero=equalize_splits
+
+# Move to adjacent split
+keybind = ctrl+shift+h=goto_split:left
+keybind = ctrl+shift+j=goto_split:bottom
+keybind = ctrl+shift+k=goto_split:top
+keybind = ctrl+shift+l=goto_split:right
+
+# }}}
+
+# Tab keybinds {{{
+
+# Cycle to next tab
+keybind = ctrl+tab=next_tab
+
+# Create new tab
+keybind = ctrl+shift+t=new_tab
+
+# }}}
+
+# Window keybinds {{{
+
+# Create new window
+keybind = ctrl+shift+n=new_window
+
+# }}}
+
+# }}}
