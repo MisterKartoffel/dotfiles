@@ -12,6 +12,8 @@ resize-overlay = never
 clipboard-trim-trailing-spaces = true
 clipboard-paste-protection = true
 
+quit-after-last-window-closed = false
+
 shell-integration = zsh
 shell-integration-features = true
 

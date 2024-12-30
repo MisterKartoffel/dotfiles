@@ -21,8 +21,7 @@ keybind = ctrl+shift+w=close_surface
 # Split keybinds {{{
 
 # Create new split on the selected side of current split
-keybind = ctrl+shift+v=new_split:down
-keybind = ctrl+shift+s=new_split:right
+keybind = ctrl+shift+s=new_split:auto
 
 # Resize split
 keybind = alt+shift+h=resize_split:left,20
