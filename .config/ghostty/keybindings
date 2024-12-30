@@ -1,58 +1,46 @@
 # General keybinds {{{
-
-keybind = ctrl+v=paste_from_clipboard
-
+    keybind = ctrl+v=paste_from_clipboard
 # }}}
 
 # Font keybinds {{{
-
-# Manipulate font size
-keybind = ctrl+plus=increase_font_size:1
-keybind = ctrl+minus=decrease_font_size:1
-keybind = ctrl+zero=reset_font_size
-
+    # Manipulate font size
+        keybind = all:ctrl+plus=increase_font_size:1
+        keybind = all:ctrl+minus=decrease_font_size:1
+        keybind = all:ctrl+zero=reset_font_size
 # }}}
 
 # Surface keybinds {{{
+    # Close current split -> tab -> window
+        keybind = ctrl+w=close_surface
 
-# Close current split -> tab -> window
-keybind = ctrl+shift+w=close_surface
+    # Split keybinds {{{
+        # Create new split on the selected side of current split
+            keybind = ctrl+s=new_split:auto
 
-# Split keybinds {{{
+        # Resize split
+            keybind = ctrl+shift+h=resize_split:left,20
+            keybind = ctrl+shift+j=resize_split:down,20
+            keybind = ctrl+shift+k=resize_split:up,20
+            keybind = ctrl+shift+l=resize_split:right,20
+            keybind = ctrl+shift+zero=equalize_splits
 
-# Create new split on the selected side of current split
-keybind = ctrl+shift+s=new_split:auto
+        # Move to adjacent split
+            keybind = ctrl+h=goto_split:left
+            keybind = ctrl+j=goto_split:bottom
+            keybind = ctrl+k=goto_split:top
+            keybind = ctrl+l=goto_split:right
+    # }}}
 
-# Resize split
-keybind = alt+shift+h=resize_split:left,20
-keybind = alt+shift+j=resize_split:down,20
-keybind = alt+shift+k=resize_split:up,20
-keybind = alt+shift+l=resize_split:right,20
-keybind = alt+shift+zero=equalize_splits
+    # Tab keybinds {{{
+        # Cycle to next tab
+            keybind = ctrl+tab=next_tab
 
-# Move to adjacent split
-keybind = ctrl+shift+h=goto_split:left
-keybind = ctrl+shift+j=goto_split:bottom
-keybind = ctrl+shift+k=goto_split:top
-keybind = ctrl+shift+l=goto_split:right
+        # Create new tab
+            keybind = ctrl+t=new_tab
+    # }}}
 
-# }}}
-
-# Tab keybinds {{{
-
-# Cycle to next tab
-keybind = ctrl+tab=next_tab
-
-# Create new tab
-keybind = ctrl+shift+t=new_tab
-
-# }}}
-
-# Window keybinds {{{
-
-# Create new window
-keybind = ctrl+shift+n=new_window
-
-# }}}
-
+    # Window keybinds {{{
+        # Create new window
+            keybind = ctrl+n=new_window
+    # }}}
 # }}}
