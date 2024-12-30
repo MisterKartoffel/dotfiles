@@ -9,6 +9,6 @@ jq
 libnotify
 meson
 openexr
-poppler
 ripgrep
+zathura-pdf-poppler
 zoxide

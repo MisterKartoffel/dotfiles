@@ -8,9 +8,9 @@ fastfetch
 flatpak
 ghostty
 github-cli
+gnu-free-fonts
 gtk-engine-murrine
 hypridle
-hyprland
 hyprlock
 hyprpicker
 inotify-tools
@@ -34,7 +34,6 @@ reflector
 rofi-wayland
 sassc
 satty
-sddm
 smartmontools
 snap-pac
 swaync

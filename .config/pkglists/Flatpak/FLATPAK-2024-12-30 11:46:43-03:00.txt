@@ -10,4 +10,4 @@ Disk Usage Analyzer	org.gnome.baobab	47.0	stable	system
 KeePassXC	org.keepassxc.KeePassXC	2.7.9	stable	system
 Prism Launcher	org.prismlauncher.PrismLauncher	9.1	stable	system
 qBittorrent	org.qbittorrent.qBittorrent	5.0.3	stable	system
-qpwgraph	org.rncbc.qpwgraph	0.8.0	stable	system
+qpwgraph	org.rncbc.qpwgraph	0.8.1	stable	system
