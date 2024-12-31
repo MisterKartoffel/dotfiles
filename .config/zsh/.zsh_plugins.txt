@@ -1,0 +1,7 @@
+# List of plugins to be loaded by antidote
+
+Aloxaf/fzf-tab
+zsh-users/zsh-syntax-highlighting
+zsh-users/zsh-completions
+zsh-users/zsh-autosuggestions
+softmoth/zsh-vim-mode

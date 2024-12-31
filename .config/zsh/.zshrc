@@ -1,35 +1,30 @@
-# Set the directory to store zinit and plugins
-ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
+# Set the root name of the plugins files (.txt and .zsh) antidote will use.
+zsh_plugins=${ZDOTDIR:-~}/.zsh_plugins
 
-# Download zinit, if not downloaded
-if [ ! -d "$ZINIT_HOME" ]; then
-    mkdir -p "$(dirname $ZINIT_HOME)"
-    git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
+# Ensure the .zsh_plugins.txt file exists so you can add plugins.
+[[ -f ${zsh_plugins}.txt ]] || touch ${zsh_plugins}.txt
+
+# Lazy-load antidote from its functions directory.
+fpath=($ZDOTDIR/.antidote/functions $fpath)
+autoload -Uz antidote
+
+# Generate a new static file whenever .zsh_plugins.txt is updated.
+if [[ ! ${zsh_plugins}.zsh -nt ${zsh_plugins}.txt ]]; then
+    antidote bundle <${zsh_plugins}.txt >|${zsh_plugins}.zsh
 fi
 
-# Source and load zinit
-source "${ZINIT_HOME}/zinit.zsh"
+# Source your static plugins file.
+source ${zsh_plugins}.zsh
 
 # Initialize oh-my-posh prompt
-eval "$(oh-my-posh init zsh --config $HOME/.local/share/themes/zsh/ohmyposh/config.toml)"
-
-# Load completions
-autoload -Uz compinit && compinit
-zinit cdreplay -q
-
-# Source plugins
-zinit light Aloxaf/fzf-tab
-zinit light zsh-users/zsh-syntax-highlighting
-zinit light zsh-users/zsh-completions
-zinit light zsh-users/zsh-autosuggestions
-zinit light softmoth/zsh-vim-mode
+eval "$(oh-my-posh init zsh --config $ZDOTDIR/ohmyposh/config.toml)"
 
 # Keybindings
 bindkey -v
 
 # History
 HISTSIZE=1000
-HISTFILE=$HOME/.zsh_history
+HISTFILE=$ZDOTDIR/.zsh_history
 SAVEHIST=$HISTSIZE
 HISTDUP=erase
 setopt appendhistory
@@ -46,21 +41,6 @@ setopt correct_all
 eval "$(fzf --zsh)"
 eval "$(zoxide init --cmd cd zsh)"
 source ~/.local/share/themes/zsh/catppuccin_mocha-zsh-syntax-highlighting.zsh
-export LS_COLORS="$(vivid generate catppuccin-mocha)"
-export FZF_DEFAULT_OPTS=" \
-    --color=bg+:#313244,bg:#1e1e2e,spinner:#f5e0dc,hl:#f38ba8 \
-    --color=fg:#cdd6f4,header:#f38ba8,info:#cba6f7,pointer:#f5e0dc \
-    --color=marker:#b4befe,fg+:#cdd6f4,prompt:#cba6f7,hl+:#f38ba8 \
-    --color=selected-bg:#45475a \
-    --multi"
-
-# Environments
-export PATH="$PATH:$HOME/.local/bin"
-export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
-export EDITOR=nvim
-export VISUAL=nvim
-export MANPAGER='nvim +Man!'
-export BROWSER=io.github.zen_browser.zen
 
 # Completion styling
 zstyle ":completion:*" matcher-list "m:{a-z}={A-Za-z}"
