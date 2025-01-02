@@ -4,6 +4,8 @@
 
 
 # Essentials
+- [ ] Rewrite all opener behavior in Yazi
+- [ ] Configure all custom channels in Television
 
 # Non-essentials {{{
 - [ ] Set up Neovim to work with LaTeX files.
