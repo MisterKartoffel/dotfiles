@@ -134,7 +134,7 @@
     },
 
     "custom/weather": {
-        "exec": "get-weather Porto-Alegre",
+        "exec": "get-weather Porto-Alegre; curl wttr.in/Porto-Alegre > $HOME/.weather",
         "return-type": "json",
         "interval": 1800,
         "format": "{}",

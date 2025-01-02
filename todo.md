@@ -6,7 +6,6 @@
 # Essentials
 
 # Non-essentials {{{
-- [ ] Fix Waybar weather widget.
 - [ ] Set up Neovim to work with LaTeX files.
 - [ ] Fix Treesitter not working with hyprland files.
 - [ ] Look into if Syncthing is a good addition.
