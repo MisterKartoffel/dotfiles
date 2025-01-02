@@ -11,6 +11,7 @@ github-cli
 gnu-free-fonts
 gtk-engine-murrine
 hypridle
+hyprland
 hyprlock
 hyprpicker
 inotify-tools

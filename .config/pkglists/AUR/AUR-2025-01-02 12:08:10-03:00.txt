@@ -3,7 +3,9 @@ catppuccin-gtk-theme-mocha
 downgrade
 ncspot-bin
 oh-my-posh-bin
+pam_autologin
 paru-bin
 refind-btrfs
 snapper-rollback
+uwsm
 zsh-antidote
