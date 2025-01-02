@@ -63,17 +63,15 @@ function nf() { # Neovim Find
     fzf -m --preview='bat --color=always {}' --bind='enter:become($EDITOR {+})'
 }
 
-function pqf() { # Pacman Query Find
-    pacman -Qq |
-    fzf --preview 'pacman -Qil {}' --layout=reverse --bind 'enter:execute(sudo pacman -Rns {})'
+function install() {
+    paru -Slq | fzf -q "$1" -m --preview 'paru -Si {1}' | xargs -ro paru -S
 }
 
-function psf() { # Pacman Sync Find
-    pacman -Slq |
-    fzf --preview 'pacman -Si {}' --layout=reverse --bind 'enter:execute(sudo pacman -S {})'
+function uninstall() {
+    paru -Qq | fzf -q "$1" -m --preview 'paru -Qi {1}' | xargs -ro paru -Rns
 }
 
-function pacman-stray() {
+function stray() {
     sudo export LC_ALL=C.UTF-8; comm -13 <(pacman -Qlq | sed 's,/$,,' | sort) <(find /etc /usr /opt -path /usr/lib/modules -prune -o -print | sort)
 }
 
