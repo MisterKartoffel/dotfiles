@@ -5,7 +5,7 @@ zsh_plugins=${ZDOTDIR:-~}/.zsh_plugins
 [[ -f ${zsh_plugins}.txt ]] || touch ${zsh_plugins}.txt
 
 # Lazy-load antidote from its functions directory.
-fpath=($ZDOTDIR/.antidote/functions $fpath)
+fpath=(/usr/share/.antidote/functions $fpath)
 autoload -Uz antidote
 
 # Generate a new static file whenever .zsh_plugins.txt is updated.
@@ -39,8 +39,6 @@ setopt correct_all
 
 # Shell integrations
 eval "$(fzf --zsh)"
-eval "$(zoxide init --cmd cd zsh)"
-source ~/.local/share/themes/zsh/catppuccin_mocha-zsh-syntax-highlighting.zsh
 
 # Completion styling
 zstyle ":completion:*" matcher-list "m:{a-z}={A-Za-z}"
@@ -49,7 +47,6 @@ zstyle ":completion:*:descriptions" format "[%d]"
 zstyle ":completion:*" special-dirs true
 zstyle ":completion:*" menu no
 zstyle ":fzf-tab:complete:cd:*" fzf-preview "ls --color $realpath"
-zstyle ":fzf-tab:complete:__zoxide_z:*" fzf-preview "ls --color $realpath"
 
 # Aliases
 alias vim="nvim"
