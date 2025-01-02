@@ -6,3 +6,4 @@ oh-my-posh-bin
 paru-bin
 refind-btrfs
 snapper-rollback
+zsh-antidote

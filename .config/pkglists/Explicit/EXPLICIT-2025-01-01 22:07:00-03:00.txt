@@ -27,7 +27,6 @@ nwg-look
 pavucontrol
 pkgstats
 polkit-kde-agent
-qt5-quickcontrols2
 qt5ct
 qt6ct
 reflector

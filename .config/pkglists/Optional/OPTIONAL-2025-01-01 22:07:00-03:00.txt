@@ -11,4 +11,3 @@ meson
 openexr
 ripgrep
 zathura-pdf-poppler
-zoxide
