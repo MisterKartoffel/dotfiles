@@ -16,9 +16,7 @@ return {
         lspconfig.lua_ls.setup({ capabilities = capabilities })
         lspconfig.bashls.setup({ capabilities = capabilities })
         lspconfig.yamlls.setup({ capabilities = capabilities })
-        lspconfig.hyprls.setup({ capabilities = capabilities })
         lspconfig.ts_ls.setup({ capabilities = capabilities })
-        lspconfig.taplo.setup({ capabilities = capabilities })
         lspconfig.biome.setup({ capabilities = capabilities })
     end,
 }
