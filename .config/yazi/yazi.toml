@@ -3,13 +3,13 @@
 "$schema" = "https://yazi-rs.github.io/schemas/yazi.json"
 
 [manager] # {{{
-ratio		    = [ 2, 4, 3 ]
+ratio		    = [ 0, 1, 3 ]
 sort_by		    = "alphabetical"
 sort_sensitive	= false
 sort_reverse	= false
 sort_dir_first	= true
 sort_translit	= false
-linemode	    = "none"
+linemode	    = "size"
 show_hidden	    = true
 show_symlink	= true
 scrolloff	    = 5
@@ -20,8 +20,8 @@ title_format	= "{cwd}"
 [preview] # {{{
 wrap            = "no"
 tab_size	    = 2
-max_width	    = 1200
-max_height	    = 1000
+max_width	    = 1366
+max_height	    = 768
 cache_dir	    = ""
 image_delay     = 100
 image_filter	= "triangle"
@@ -33,27 +33,29 @@ ueberzug_offset	= [ 0, 0, 0, 0 ]
 
 [opener] # {{{
 edit = [
-	{ run = 'nvim "$@"', desc = "$EDITOR", block = true, for = "unix" },
+	{ run = 'nvim "$@"', desc = "$EDITOR", block = true },
 ]
 open = [
-	{ run = 'xdg-open "$1"', desc = "Open", for = "linux" },
+	{ run = 'xdg-open "$1"', desc = "Open" },
 ]
 reveal = [
-	{ run = 'cd "$(dirname "$1")"', desc = "Reveal", for = "linux" },
+	{ run = 'cd "$(dirname "$1")"', desc = "Reveal" },
 ]
 extract = [
-	{ run = 'ya pub extract --list "$@"', desc = "Extract here", for = "unix" },
+	{ run = 'ya pub extract --list "$@"', desc = "Extract here" },
 ]
 play = [
-	{ run = 'mpv --force-window "$@"', orphan = true, for = "unix" },
-	{ run = '''mediainfo "$1"; echo "Press enter to exit"; read _''', block = true, desc = "Show media info", for = "unix" },
+	{ run = 'mpv --force-window "$@"', orphan = true },
+]
+pdf = [
+    { run = 'zathura "$1"', orphan = true },
 ]
 # }}}
 
 [open] # {{{
 rules = [
 	# Folder
-	{ name = "*/", use = [ "edit", "open", "reveal" ] },
+	{ name = "inode/directory", use = [ "reveal", "edit", "open" ] },
 	# Text
 	{ mime = "text/*", use = [ "edit", "reveal" ] },
 	# Image
@@ -64,8 +66,11 @@ rules = [
 	{ mime = "application/{,g}zip", use = [ "extract", "reveal" ] },
 	{ mime = "application/x-{tar,bzip*,7z-compressed,xz,rar}", use = [ "extract", "reveal" ] },
 	# JSON
-	{ mime = "application/{json,x-ndjson}", use = [ "edit", "reveal" ] },
-	{ mime = "*/javascript", use = [ "edit", "reveal" ] },
+	{ mime = "application/{json,jsonc,x-ndjson}", use = [ "edit", "reveal" ] },
+    # Torrent
+    { mime = "application/x-bittorrent", use = [ "open" ] },
+    # PDF
+    { mime = "application/pdf", use = [ "pdf" ] },
 	# Empty file
 	{ mime = "inode/x-empty", use = [ "edit", "reveal" ] },
 	# Fallback
