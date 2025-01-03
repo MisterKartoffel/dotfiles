@@ -26,7 +26,8 @@ preview_command = "bat -n --color=always {}"
 name = "history"
 source_command = "bat -p $HOME/.config/zsh/.zsh_history | cut -d ';' -f 2-"
 
-[[cable_channel]]
-name = "image"
-source_command = "fd -t f . $HOME | xargs file --mime-type | rg -F 'image/' | cut -d ':' -f 1"
-preview_command = "cat | xargs chafa"
+# [[cable_channel]] (Disabled while television doesn't support image previews)
+# name = "image"
+# source_command = "fd -t f . $HOME | xargs file --mime-type | rg -F 'image/' | cut -d ':' -f 1"
+# preview_command = "xargs -ro chafa -f kitty"
+

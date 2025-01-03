@@ -188,5 +188,6 @@ toggle_preview = "ctrl-o"
 # history channel
 "" = "history"
 
-# image channel
-"chafa" = "image"
+# image channel (Disabled while television doesn't support image previews)
+# "chafa" = "image"
+# "wallpaper" = "image"
