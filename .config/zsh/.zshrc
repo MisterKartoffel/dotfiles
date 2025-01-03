@@ -42,7 +42,7 @@ setopt globdots
 setopt correct_all
 
 # Shell integrations
-eval "$(fzf --zsh)"
+eval "$(tv init zsh)"
 
 # Completion styling
 zstyle ":completion:*" matcher-list "m:{a-z}={A-Za-z}"
@@ -54,39 +54,27 @@ zstyle ":fzf-tab:complete:cd:*" fzf-preview "ls --color $realpath"
 zstyle ":antidote:bundle" use-friendly-names "yes"
 
 # Aliases
-alias vim="nvim"
 alias fetch="fastfetch --gpu-hide-type integrated"
 alias config="/usr/bin/git --git-dir=$HOME/Dotfiles/ --work-tree=$HOME"
-alias lazyconfig="lazygit --git-dir=$HOME/Dotfiles/ --work-tree=$HOME"
+alias lazy="lazygit --git-dir=$HOME/Dotfiles/ --work-tree=$HOME"
 alias ll="eza -1la --color=always --icons=always"
-alias trash="gio trash"
 alias c="clear"
-alias q="exit"
 
 # Helper functions
-function nf() { # Neovim Find
-    fzf -m --preview='bat --color=always {}' --bind='enter:become($EDITOR {+})'
+function nf() { # Nvim find with television
+    tv file | xargs -ro nvim
 }
 
 function install() {
-    paru -Slq | fzf -q "$1" -m --preview 'paru -Si {1}' | xargs -ro paru -S
+    paru -Slq | tv -p 'paru -Si {}' | xargs -ro paru -S
 }
 
 function uninstall() {
-    paru -Qq | fzf -q "$1" -m --preview 'paru -Qi {1}' | xargs -ro paru -Rns
+    paru -Qq | tv -p 'paru -Qi {}' | xargs -ro paru -Rns
 }
 
 function stray() {
     sudo export LC_ALL=C.UTF-8; comm -13 <(pacman -Qlq | sed 's,/$,,' | sort) <(find /etc /usr /opt -path /usr/lib/modules -prune -o -print | sort)
-}
-
-function y() {
-	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
-	yazi "$@" --cwd-file="$tmp"
-	if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
-		builtin cd -- "$cwd"
-	fi
-	rm -f -- "$tmp"
 }
 
 # To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
