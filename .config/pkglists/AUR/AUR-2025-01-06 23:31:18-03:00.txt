@@ -2,10 +2,9 @@ bibata-cursor-theme-bin
 catppuccin-gtk-theme-mocha
 downgrade
 ncspot-bin
-oh-my-posh-bin
-pam_autologin
 paru-bin
 refind-btrfs
 snapper-rollback
+ttf-maple-beta
 uwsm
 zsh-antidote

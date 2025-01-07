@@ -3,7 +3,6 @@ alsa-utils
 base
 brightnessctl
 btop
-eza
 fastfetch
 flatpak
 ghostty
@@ -19,6 +18,8 @@ intel-ucode
 lazygit
 linux-lts
 linux-lts-headers
+lsd
+ly
 man-db
 mpv
 nano
@@ -38,9 +39,8 @@ smartmontools
 snap-pac
 swaync
 swww
+television
 tldr
-ttf-cascadia-code-nerd
-ttf-cascadia-mono-nerd
 ttf-font-awesome
 ttf-jetbrains-mono
 ttf-jetbrains-mono-nerd
