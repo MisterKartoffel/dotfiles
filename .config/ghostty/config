@@ -1,6 +1,7 @@
-font-family = CaskaydiaCove Nerd Font Mono
+font-family = Maple Mono NF
+font-style = Medium
 
-font-size = 13
+font-size = 14
 
 theme = catppuccin-mocha
 
@@ -21,5 +22,7 @@ shell-integration-features = true
 gtk-single-instance = true
 
 gtk-tabs-location = bottom
+
+gtk-adwaita = false
 
 config-file = ?keybindings
