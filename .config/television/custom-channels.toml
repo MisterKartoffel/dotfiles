@@ -17,6 +17,7 @@ preview_command = "eza -1la --total-size {}"
 name = "config add"
 source_command = "fd -H . $HOME"
 preview_command = "bat -n --color=always {}"
+
 [[cable_channel]]
 name = "config rm"
 source_command = "git --git-dir=$HOME/Dotfiles --work-tree=$HOME ls-tree -r master --name-only"
@@ -30,4 +31,3 @@ source_command = "bat -p $HOME/.config/zsh/.zsh_history | cut -d ';' -f 2-"
 # name = "image"
 # source_command = "fd -t f . $HOME | xargs file --mime-type | rg -F 'image/' | cut -d ':' -f 1"
 # preview_command = "xargs -ro chafa -f kitty"
-
