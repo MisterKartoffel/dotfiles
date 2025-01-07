@@ -57,7 +57,7 @@ zstyle ":antidote:bundle" use-friendly-names "yes"
 alias fetch="fastfetch --gpu-hide-type integrated"
 alias config="/usr/bin/git --git-dir=$HOME/Dotfiles/ --work-tree=$HOME"
 alias lazy="lazygit --git-dir=$HOME/Dotfiles/ --work-tree=$HOME"
-alias ll="eza -1la --color=always --icons=always"
+alias ls="lsd -Al1"
 alias c="clear"
 
 # Helper functions
