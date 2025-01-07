@@ -6,34 +6,36 @@
         }
     },
     "display": {
-        "separator": " "
+        "separator": " ",
+        "constants": [
+            "──────────────────"
+        ]
     },
     "modules": [
-        "break",
+        {
+            "type": "custom",
+            "key": "┌{$1} Software {$1}┐",
+            "keyColor": "cyan"
+        },
         {
             "type": "custom",
             "key": " OS",
-            "keyColor": "yellow"
+            "keyColor": "red"
         },
         {
             "type": "kernel",
             "key": "│ ├󱅲",
-            "keyColor": "yellow"
+            "keyColor": "red"
         },
         {
             "type": "packages",
             "key": "│ ├󰏖",
-            "keyColor": "yellow"
+            "keyColor": "red"
         },
         {
             "type": "shell",
             "key": "│ └",
-            "keyColor": "yellow"
-        },
-        {
-            "type": "custom",
-            "key": "└",
-            "keyColor": "yellow"
+            "keyColor": "red"
         },
         {
             "type": "custom",
@@ -57,9 +59,15 @@
         },
         {
             "type": "custom",
-            "key": "└",
-            "keyColor": "blue"
+            "key": "└{$1}──────────{$1}┘",
+            "keyColor": "cyan"
         },
+            {
+            "type": "custom",
+            "key": "┌{$1} Hardware {$1}┐",
+            "keyColor": "cyan"
+        },
+
         {
             "type": "custom",
             "key": "󰍹 PC",
@@ -103,8 +111,8 @@
         },
         {
             "type": "custom",
-            "key": "└",
-            "keyColor": "green"
+            "key": "└{$1}──────────{$1}┘",
+            "keyColor": "cyan"
         },
         {
             "type": "colors",
