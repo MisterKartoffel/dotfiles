@@ -6,7 +6,6 @@ local bind = vim.keymap.set -- Saves keystrokes
 
 -- Vanilla Neovim {{{
     bind({"n", "v", "i"}, "<C-ç>", "<CR>", { desc = "Remaps CTRL+ç to ENTER", silent = true })
-    bind("n", ";", ":", { desc = "Opens command mode from normal mode", silent = true })
 
     bind("v", "J", ":m '>+1<CR>gv=gv", { desc = "Move selected string down a line and autoindent", silent = true })
     bind("v", "K", ":m '<-2<CR>gv=gv", { desc = "Move selected string up a line and autoindent", silent = true })
