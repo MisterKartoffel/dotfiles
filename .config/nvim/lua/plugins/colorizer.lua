@@ -2,7 +2,7 @@ return {
     "norcalli/nvim-colorizer.lua",
     event = {
         "BufReadPre",
-        "BufNewFile"
+        "BufNewFile",
     },
     opts = {
         user_default_options = {
