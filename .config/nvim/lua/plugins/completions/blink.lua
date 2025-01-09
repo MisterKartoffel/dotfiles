@@ -10,15 +10,14 @@ return {
     opts = {
         keymap = {
             preset = "none",
-            ["<C-k>"] = { "select_prev", "fallback" },
-            ["<C-j>"] = { "select_next", "fallback" },
-            ["<Esc>"] = { "hide", "fallback" },
+            ["<A-k>"] = { "select_prev", "fallback", },
+            ["<A-j>"] = { "select_next", "fallback", },
+            ["<A-c>"] = { "show_documentation", "hide_documentation", "fallback", },
             ["<Tab>"] = {
                 function(cmp)
                     if cmp.snippet_active() then return cmp.accept()
                     else return cmp.select_and_accept() end
                 end,
-                "snippet_forward",
                 "fallback",
             },
         },
@@ -26,8 +25,8 @@ return {
             menu = {
                 draw = {
                     columns = {
-                        { "kind_icon" },
-                        { "label", gap = 1 },
+                        { "label", "label_description", gap = 1 },
+                        { "kind_icon", "kind" },
                     },
                     components = {
                         label = {
@@ -39,13 +38,10 @@ return {
                             end,
                         },
                     },
+                    treesitter = { "lsp" },
                 },
             },
             keyword = { range = "full" },
-            documentation = {
-                auto_show = true,
-                auto_show_delay_ms = 0,
-            },
             ghost_text = { enabled = true },
         },
         snippets = { preset = "luasnip" },
@@ -65,6 +61,6 @@ return {
                 },
             },
         },
-        signature = { enabled = true },
+        signature = { enabled = true, },
     }
 }
