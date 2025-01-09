@@ -1,7 +1,6 @@
 font-family = Maple Mono
 font-family = JetBrainsMono Nerd Font
 font-style = Medium
-
 font-size = 14
 
 theme = catppuccin-mocha
@@ -21,9 +20,9 @@ shell-integration = zsh
 shell-integration-features = true
 
 gtk-single-instance = true
-
 gtk-tabs-location = bottom
-
 gtk-adwaita = false
 
 config-file = ?keybindings
+config-file = ?maple-mono-font-features
+# config-file = ?monaspace-font-features
