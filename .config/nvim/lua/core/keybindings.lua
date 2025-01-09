@@ -6,6 +6,7 @@ local bind = vim.keymap.set -- Saves keystrokes
 
 -- Vanilla Neovim {{{
     bind({"n", "v", "i"}, "<C-ç>", "<CR>", { desc = "Remaps CTRL+ç to ENTER", silent = true })
+    bind("n", ";", ":", { desc = "Opens command mode from normal mode", silent = true })
 
     bind("v", "J", ":m '>+1<CR>gv=gv", { desc = "Move selected string down a line and autoindent", silent = true })
     bind("v", "K", ":m '<-2<CR>gv=gv", { desc = "Move selected string up a line and autoindent", silent = true })
@@ -20,17 +21,10 @@ local bind = vim.keymap.set -- Saves keystrokes
     bind("x", "<leader>p", [["_dP]], { desc = "Paste over selected string while keeping current register", silent = true })
 
     bind({"n", "v"}, "<leader>y", [["+y]], { desc = "Copy to system clipboard", silent = true })
-    bind("n", "<leader>Y", [["+Y]], { desc = "Copy whole line to system clipboard", silent = true })
-
     bind({"n", "v"}, "<leader>d", [["_d]], { desc = "Delete without copying", silent = true })
 
     bind("n", "<leader><leader>", ":w<CR> :so<CR>", { desc = "Save and source current file", silent = true })
--- }}}
-
--- Auto-session {{{
-    bind("n", "<leader>wr", ":SessionRestore<CR>", { desc = "Restore session for CWD", silent = true })
-    bind("n", "<leader>ws", ":SessionSave<CR>", { desc = "Save session for CWD", silent = true })
-    bind("n", "<leader>wf", ":SessionSearch<CR>", { desc = "Search sessions", silent = true })
+    bind("n", "<leader>q", ":wqa<CR>", { desc = "Save and quit all buffers", silent = true })
 -- }}}
 
 -- Gitsigns {{{
@@ -49,11 +43,6 @@ local bind = vim.keymap.set -- Saves keystrokes
     bind("n", "<leader>cf", vim.lsp.buf.format, { desc = "Autoformat current file", silent = true })
 -- }}}
 
--- Neo-tree {{{
-    bind("n", "<leader>ee", ":Neotree filesystem toggle left<CR>", { desc = "Toggle tree on/off", silent = true })
-    bind("n", "<leader>ef", ":Neotree focus<CR>", { desc = "Regain focus on tree", silent = true })
--- }}}
-
 -- Nvim-colorizer {{{
     bind("n", "<leader>cc", ":ColorizerToggle<CR>", { desc = "Toggle color highlighting of current buffer", silent = true })
 -- }}}
@@ -65,10 +54,10 @@ local bind = vim.keymap.set -- Saves keystrokes
     bind("n", "<leader>fc", ":Telescope grep_string<CR>", { desc = "Find string under cursor in CWD", silent = true })
 -- }}}
 
--- Vim-maximizer {{{
-    bind("n", "<C-w>m", ":MaximizerToggle<CR>", { desc = "Maximize/minimize a split", silent = true })
--- }}}
-
 -- Which-key {{{
     bind("n", "<leader>?", function() require("which-key").show({ global = true }) end, { desc = "Show keymaps", silent = true })
+--}}}
+
+-- Yazi {{{
+    bind("n", "<leader>e", ":Yazi<CR>", { desc = "Open Yazi", silent = true })
 -- }}}

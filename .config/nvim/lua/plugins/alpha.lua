@@ -3,6 +3,7 @@ return {
     event = "VimEnter",
     dependencies = {
         "nvim-tree/nvim-web-devicons",
+        "nvim-lua/plenary.nvim",
     },
 
     config = function()
@@ -33,12 +34,11 @@ return {
 -- Buttons {{{
         dashboard.section.buttons.val = {
             button("e", "  ❱ New file", "<CMD>ene <BAR> startinsert <CR>"),
+            button("SPC e", "  ❱ Browse filesystem", "<CMD>Yazi<CR>"),
             button("SPC ff", "  ❱ Find file", "<CMD>cd $HOME<CR> <CMD>Telescope find_files<CR>"),
             button("SPC fs", "󰱼  ❱ Find string", "<CMD>cd $HOME<CR> <CMD>Telescope live_grep<CR>"),
             button("SPC fr", "󱋡  ❱ Recent", "<CMD>Telescope oldfiles<CR>"),
-            button("SPC wr", "  ❱ Restore past session", "<CMD>SessionRestore<CR>"),
-            button("SPC wf", "  ❱ Search session", "<CMD>SessionSearch<CR>"),
-            button("s", "  ❱ Settings", "<CMD>e $MYVIMRC<CR> <CMD>cd $HOME/.config/nvim<CR> <CMD>Neotree filesystem toggle left<CR>"),
+            button("s", "  ❱ Settings", "<CMD>cd $HOME/.config/nvim<CR> <CMD>Yazi<CR>"),
             button("q", "󰩈  ❱ Quit Neovim", "<CMD>qa<CR>"),
         }
 -- }}}

@@ -7,7 +7,6 @@ return {
         "LazyGitFilter",
         "LazyGitFilterCurrentFile",
     },
-    dependencies = {
-        "nvim-lua/plenary.nvim",
-    },
+    dependencies = { "nvim-lua/plenary.nvim", },
+    config = true,
 }

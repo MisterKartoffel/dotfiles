@@ -2,23 +2,29 @@
 -- █▀▀ █░░ █▀█ █▄▄ ▄▀█ █░░   █▀ █▀▀ ▀█▀ ▀█▀ █ █▄░█ █▀▀ █▀
 -- █▄█ █▄▄ █▄█ █▄█ █▀█ █▄▄   ▄█ ██▄ ░█░ ░█░ █ █░▀█ █▄█ ▄█
 
-vim.opt.expandtab = true
-vim.opt.tabstop = 4
-vim.opt.softtabstop = 4
-vim.opt.shiftwidth = 4
+local set = vim.opt
 
-vim.opt.nu = true
-vim.opt.relativenumber = true
+set.expandtab = true
+set.tabstop = 4
+set.softtabstop = 4
+set.shiftwidth = 4
+set.termguicolors = true
 
-vim.opt.smartindent = true
-vim.opt.wrap = false
-vim.opt.foldmethod = "marker"
+set.nu = true
+set.relativenumber = true
 
-vim.opt.scrolloff = 8
-vim.opt.signcolumn = "yes"
+set.autoindent = true
+set.smartindent = true
+set.smarttab = true
+set.wrap = false
+set.foldmethod = "marker"
 
-vim.opt.hlsearch = false
-vim.opt.incsearch = true
+set.scrolloff = 8
+set.signcolumn = "yes"
+
+set.hlsearch = false
+set.incsearch = true
+set.clipboard = "unnamedplus"
 
 vim.cmd("colorscheme catppuccin")
 vim.o.sessionoptions="blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
