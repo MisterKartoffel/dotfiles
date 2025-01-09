@@ -1,17 +1,23 @@
 return {
     "neovim/nvim-lspconfig",
-    event = {
-        "BufReadPre",
-        "BufNewFile",
-    },
     dependencies = { "saghen/blink.cmp", },
+    opts = {
+        servers = {
+            lua_ls = {},
+            bashls = {},
+            vimls = {},
+            marksman = {},
+            taplo = {},
+            yamlls = {},
+            cssls = {},
+        },
+    },
 
-    config = function()
-        local capabilities = require("blink-cmp").get_lsp_capabilities()
+    config = function(_, opts)
         local lspconfig = require("lspconfig")
-
-        lspconfig.lua_ls.setup({ capabilities = capabilities })
-        lspconfig.bashls.setup({ capabilities = capabilities })
-        lspconfig.vimls.setup({ capabilities = capabilities })
-    end
+        for server, config in pairs(opts.servers) do
+            config.capabilities = require("blink.cmp").get_lsp_capabilities(config.capabilities)
+            lspconfig[server].setup(config)
+        end
+    end,
 }
