@@ -22,6 +22,7 @@ require("lazy").setup({
         { import = "plugins.notify" },
         { import = "plugins.telescope" },
         { import = "plugins.completions" },
+        { import = "plugins.eyecandy" },
     },
     change_detection = { notify = false, },
     install = { colorscheme = { "catppuccin" }, },
