@@ -26,6 +26,7 @@ nano
 neovim
 network-manager-applet
 nwg-look
+otf-monaspace
 pavucontrol
 pkgstats
 polkit-kde-agent

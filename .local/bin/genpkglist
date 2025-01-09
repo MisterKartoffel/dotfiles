@@ -1,80 +1,51 @@
-#!/bin/bash
+#!/bin/sh
 
 # Source for all list generating commands:
 # https://wiki.archlinux.org/title/Pacman/Tips_and_tricks#List_of_installed_packages
 
 pkgListDir="$HOME/.config/pkglists"
-creationTime="$(date --rfc-3339="seconds")"
 
 function setupListings () {
-    case "$1" in
-        AUR)
-            pacman -Qqem > "$pkgListDir"/"$1"/"AUR-$creationTime.txt"
-            if [ ! -e "$pkgListDir"/"$1"/"AUR-$creationTime.txt" ]; then
-                echo "ERROR: failed to create $pkgListDir/$1/AUR-$creationTime.txt"
-                exit 1
-            else
-                echo -e "AUR listing: $pkgListDir/$1/AUR-$creationTime.txt\n"
-            fi
-            ;;
-
-        Flatpak)
-            flatpak list --app > "$pkgListDir"/"$1"/"FLATPAK-$creationTime.txt"
-            if [ ! -e "$pkgListDir"/"$1"/"FLATPAK-$creationTime.txt" ]; then
-                echo "ERROR: failed to create $pkgListDir/$1/'FLATPAK-$creationTime.txt'"
-                exit 1
-            else
-                echo -e "Flatpak listing: $pkgListDir/$1/FLATPAK-$creationTime.txt\n"
-            fi
-            ;;
-
-        Optional)
-            comm -13 <(pacman -Qqdt | sort) <(pacman -Qqdtt | sort) > "$pkgListDir"/"$1"/"OPTIONAL-$creationTime.txt"
-            if [ ! -e "$pkgListDir"/"$1"/"OPTIONAL-$creationTime.txt" ]; then
-                echo "ERROR: failed to create $pkgListDir/$1/OPTIONAL-$creationTime.txt"
-                exit 1
-            else
-                echo -e "Optional dependency listing: $pkgListDir/$1/OPTIONAL-$creationTime.txt\n"
-            fi
-            ;;
-
-        Explicit)
-            pacman -Qqten > "$pkgListDir"/"$1"/"EXPLICIT-$creationTime.txt"
-            if [ ! -e "$pkgListDir"/"$1"/"EXPLICIT-$creationTime.txt" ]; then
-                echo "ERROR: failed to create $pkgListDir/$1/'EXPLICIT-$creationTime.txt'"
-                exit 1
-            else
-                echo -e "Explicit install listing: $pkgListDir/$1/EXPLICIT-$creationTime.txt\n"
-            fi
-            ;;
-
-        *)
-            echo "Error: $1 undefined as a source."
-            exit 1
-            ;;
-    esac
-}
-
-function setupDirectories () {
-    if [ -e "$pkgListDir" ]; then
-        rm -rf "$pkgListDir"
-        echo -e "Cleared previous package lists under $pkgListDir\n"
-    fi
-
-    if [ -f "$pkgListDir" ]; then
-        echo "Error: $pkgListDir exists as a file."
-        exit 1
-    else
-        mkdir "$pkgListDir"
-        echo -e "New package listing master directory: $pkgListDir\n"
-    fi
+    creationTime="$(date --rfc-3339="seconds")"
 
     for source in "$@";
     do
-        mkdir "$pkgListDir"/"$source"
-        echo "New $source listing directory: $pkgListDir/$source"
-        setupListings "$source"
+        current="$pkgListDir/$source-$creationTime.txt"
+        logMessage="$source install listing: $current"
+
+        case "$source" in
+            AUR)
+                pacman -Qqem > $current 
+                ;;
+
+            Flatpak)
+                flatpak list --columns=application --app > $current 
+                ;;
+
+            Optional)
+                comm -13 <(pacman -Qqdt | sort) <(pacman -Qqdtt | sort) > $current 
+                ;;
+
+            Explicit)
+                pacman -Qqten > $current 
+                ;;
+
+            *)
+                echo "Error: $1 undefined as a source."
+                exit 1
+                ;;
+        esac
+
+        echo -e "$logMessage\n"
     done
 }
 
-setupDirectories "AUR" "Flatpak" "Optional" "Explicit"
+if [ -e "$pkgListDir" ]; then
+    rm -rf "$pkgListDir"
+    echo -e "Cleared previous package lists under $pkgListDir\n"
+fi
+
+mkdir "$pkgListDir"
+echo -e "New package listing master directory: $pkgListDir\n"
+
+setupListings "AUR" "Flatpak" "Optional" "Explicit"
