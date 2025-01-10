@@ -183,7 +183,7 @@ toggle_preview = "ctrl-o"
 
 # config channel
 "config add" = "config add"
-"config rm" = "config rm"
+"config restore" = "config restore"
 
 # history channel
 "" = "history"
