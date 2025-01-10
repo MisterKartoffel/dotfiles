@@ -12,8 +12,8 @@ return {
 	opts = {
 		keymap = {
 			preset = "none",
-			["<A-k>"] = { "select_prev", "fallback" },
-			["<A-j>"] = { "select_next", "fallback" },
+			["<C-p>"] = { "select_prev", "fallback" },
+			["<C-n>"] = { "select_next", "fallback" },
 			["<A-c>"] = { "show_documentation", "hide_documentation", "fallback" },
 			["<Tab>"] = {
 				function(cmp)
