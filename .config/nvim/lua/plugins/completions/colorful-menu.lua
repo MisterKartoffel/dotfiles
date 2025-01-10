@@ -1,5 +1,5 @@
 return {
-    "xzbdmw/colorful-menu.nvim",
-    lazy = true,
-    config = true,
+	"xzbdmw/colorful-menu.nvim",
+	lazy = true,
+	config = true,
 }
