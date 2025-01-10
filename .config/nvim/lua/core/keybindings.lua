@@ -3,13 +3,13 @@
 
 -- Saves having to define default options for all keybinds, shamelessly stolen from https://github.com/Bvngee/nixconf
 local function bind(mode, lhs, rhs, opts)
-	local default_opts = { silent = true }
-	if opts then
-		opts = vim.tbl_extend("force", default_opts, opts)
-	else
-		opts = default_opts
-	end
-	vim.keymap.set(mode, lhs, rhs, opts)
+    local default_opts = { silent = true }
+    if opts then
+        opts = vim.tbl_extend("force", default_opts, opts)
+    else
+        opts = default_opts
+    end
+    vim.keymap.set(mode, lhs, rhs, opts)
 end
 
 -- Vanilla Neovim {{{
@@ -60,17 +60,13 @@ bind("n", "<leader>cc", ":ColorizerToggle<CR>", { desc = "Toggle color highlight
 bind("n", "<leader>ff", ":Telescope find_files<CR>", { desc = "Fuzzy find files in CWD" })
 bind("n", "<leader>fr", ":Telescope oldfiles<CR>", { desc = "Fuzzy find recent files" })
 bind("n", "<leader>fs", ":Telescope live_grep<CR>", { desc = "Find string in CWD" })
-bind("n", "<leader>fh", ":Telescope help_tags<CR>", { desc = "Find string in Neovim manuals" })
-bind("n", "<leader>fc", function()
-	require("telescope.builtin").find_files({
-		cwd = vim.fn.stdpath("config"),
-	})
-end, { desc = "Find files in Neovim configuration directory" })
+bind("n", "<leader>fh", ":Telescope help_tags<CR>", { desc = "Find page in Neovim manuals" })
+bind("n", "<leader>fc", function() require("telescope.builtin").find_files({ cwd = vim.fn.stdpath("config") }) end, { desc = "Find files in Neovim configuration directory" })
 -- }}}
 
 -- Which-key {{{
 bind("n", "<leader>?", function()
-	require("which-key").show({ global = true })
+    require("which-key").show({ global = true })
 end, { desc = "Show keymaps" })
 --}}}
 
