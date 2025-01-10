@@ -5,8 +5,8 @@
 
 # TODO
 ## Essentials
-- [ ] Rewrite all opener behavior in Yazi
 - [ ] Configure all custom channels in Television
+- [ ] Configure Telescope
 
 ## Non-essentials
 - [ ] Set up Neovim to work with LaTeX files.
