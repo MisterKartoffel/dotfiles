@@ -6,7 +6,6 @@ return {
 			bashls = {},
 			vimls = {},
 			marksman = {},
-			taplo = {},
 			yamlls = {},
 			cssls = {},
 		},
