@@ -51,6 +51,10 @@ end
     bind("n", "<leader>cf", vim.lsp.buf.format, { desc = "Autoformat current file" })
 -- }}}
 
+-- Markview {{{
+    bind("n", "<leader>mt", ":Markview<CR>", { desc = "Toggle markview" })
+-- }}}
+
 -- Nvim-colorizer {{{
     bind("n", "<leader>cc", ":ColorizerToggle<CR>", { desc = "Toggle color highlighting of current buffer" })
 -- }}}
