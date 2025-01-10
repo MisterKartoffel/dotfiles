@@ -1,48 +1,41 @@
 # General keybinds {{{
     keybind = clear
     keybind = ctrl+v=paste_from_clipboard
-    keybind = ctrl+comma=reload_config
+    keybind = ctrl+shift+physical:comma=reload_config
+    keybind = ctrl+shift+physical:i=inspector:toggle
 # }}}
 
 # Font keybinds {{{
-    # Manipulate font size
-        keybind = all:ctrl+equal=increase_font_size:1
-        keybind = all:ctrl+minus=decrease_font_size:1
-        keybind = all:ctrl+zero=reset_font_size
+    keybind = ctrl+shift+physical:equal=increase_font_size:1
+    keybind = ctrl+shift+physical:minus=decrease_font_size:1
+    keybind = ctrl+shift+physical:zero=reset_font_size
 # }}}
 
 # Surface keybinds {{{
     # Close current split -> tab -> window
-        keybind = ctrl+w=close_surface
+        keybind = ctrl+shift+physical:w=close_surface
 
     # Split keybinds {{{
-        # Create new split on the selected side of current split
-            keybind = ctrl+s=new_split:auto
+        keybind = ctrl+shift+physical:s=new_split:auto
 
-        # Resize split
-            keybind = ctrl+shift+h=resize_split:left,20
-            keybind = ctrl+shift+j=resize_split:down,20
-            keybind = ctrl+shift+k=resize_split:up,20
-            keybind = ctrl+shift+l=resize_split:right,20
-            keybind = ctrl+shift+zero=equalize_splits
+        keybind = ctrl+shift+left=resize_split:left,20
+        keybind = ctrl+shift+down=resize_split:down,20
+        keybind = ctrl+shift+up=resize_split:up,20
+        keybind = ctrl+shift+right=resize_split:right,20
+        keybind = ctrl+shift+enter=equalize_splits
 
-        # Move to adjacent split
-            keybind = ctrl+h=goto_split:left
-            keybind = ctrl+j=goto_split:bottom
-            keybind = ctrl+k=goto_split:top
-            keybind = ctrl+l=goto_split:right
+        keybind = ctrl+shift+physical:h=goto_split:left
+        keybind = ctrl+shift+physical:j=goto_split:bottom
+        keybind = ctrl+shift+physical:k=goto_split:top
+        keybind = ctrl+shift+physical:l=goto_split:right
     # }}}
 
     # Tab keybinds {{{
-        # Cycle to next tab
-            keybind = ctrl+tab=next_tab
-
-        # Create new tab
-            keybind = ctrl+t=unbind
+        keybind = ctrl+shift+tab=next_tab
+        keybind = ctrl+shift+physical:t=new_tab
     # }}}
 
     # Window keybinds {{{
-        # Create new window
-            keybind = ctrl+n=new_window
+        keybind = ctrl+shift+physical:n=new_window
     # }}}
 # }}}
