@@ -19,9 +19,17 @@ set.smarttab = true
 set.wrap = false
 set.foldmethod = "marker"
 
+set.ignorecase = true
+set.smartcase = true
+
+set.splitright = true
+set.splitbelow = true
+
 set.scrolloff = 8
 set.signcolumn = "yes"
 
+set.mouse = "a"
+set.inccommand = "split"
 set.hlsearch = false
 set.incsearch = true
 set.clipboard = "unnamedplus"

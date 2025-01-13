@@ -2,10 +2,10 @@ vim.api.nvim_create_augroup("bufcheck", { clear = true })
 
 -- Highlight yanks
 vim.api.nvim_create_autocmd("TextYankPost", {
-	group = "bufcheck",
-	pattern = "*",
+    desc = "Highlight yanked text",
+    group = vim.api.nvim_create_augroup("highlight_yank", { clear = true }),
 	callback = function()
-		vim.highlight.on_yank({ timeout = 200 })
+		vim.highlight.on_yank()
 	end,
 })
 

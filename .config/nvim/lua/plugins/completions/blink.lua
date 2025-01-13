@@ -12,26 +12,26 @@ return {
 	opts = {
 		keymap = {
 			preset = "none",
-			["<C-p>"] = { "select_prev", "fallback" },
-			["<C-n>"] = { "select_next", "fallback" },
-			["<A-c>"] = { "show_documentation", "hide_documentation", "fallback" },
-			["<Tab>"] = {
-				function(cmp)
-					if cmp.snippet_active() then
-						return cmp.accept()
-					else
-						return cmp.select_and_accept()
-					end
-				end,
-				"fallback",
-			},
+            ["<Tab>"] = {
+                function(cmp)
+                    if cmp.snippet_active() then return cmp.accept()
+                    else return cmp.select_and_accept() end
+                end,
+                "snippet_forward",
+                "fallback"
+            },
+            ["<C-p>"] = { "select_prev", "fallback" },
+            ["<C-n>"] = { "select_next", "fallback" },
+            ["<A-c>"] = { "hide_documentation", "show_documentation", "fallback" },
+            ["<C-b>"] = { "scroll_documentation_up", "fallback" },
+            ["<C-f>"] = { "scroll_documentation_down", "fallback" },
 		},
 		completion = {
 			menu = {
 				draw = {
 					columns = {
-						{ "label", "label_description", gap = 1 },
-						{ "kind_icon", "kind" },
+						{ "kind_icon" },
+                        { "label", gap = 1 },
 					},
 					components = {
 						label = {
@@ -43,14 +43,27 @@ return {
 							end,
 						},
 					},
-					treesitter = { "lsp" },
+					treesitter = { "lsp", },
 				},
+                border = "single",
 			},
-			keyword = { range = "full" },
-			ghost_text = { enabled = true },
+            documentation = {
+                auto_show = true,
+                auto_show_delay_ms = 500,
+                window = { border = "single", },
+            },
+			keyword = { range = "full", },
+			ghost_text = { enabled = true, },
 		},
-		snippets = { preset = "luasnip" },
+		snippets = { preset = "luasnip", },
 		sources = {
+            providers = {
+                lazydev = {
+                    name = "LazyDev",
+                    module = "lazydev.integrations.blink",
+                    score_offset = 100,
+                },
+            },
 			default = {
 				"lazydev",
 				"lsp",
@@ -58,14 +71,16 @@ return {
 				"buffer",
 				"path",
 			},
-			providers = {
-				lazydev = {
-					name = "LazyDev",
-					module = "lazydev.integrations.blink",
-					score_offset = 100,
-				},
-			},
+            per_filetype = {
+                markdown = { "buffer", "path", },
+            },
+            cmdline = function()
+                local type = vim.fn.getcmdtype()
+                if type == "/" or type == "?" then return { "buffer" } end
+                if type == ":" or type == "@" then return { "cmdline" } end
+                return {}
+            end,
 		},
-		signature = { enabled = true },
+		signature = { enabled = true, },
 	},
 }
